@@ -5,11 +5,10 @@ import unittest
 import datetime
 import urllib
 import sys
-from ApiTest.Getlist_beta import getlist_beta
 from selenium import webdriver
 import os
 import time
-from case import PCbeta_Calendar,PCbeta_Type,dujia_AddNewProduct
+from case import PCbeta_Calendar,PCbeta_Type,dujia_AddNewProduct,PCchangetkicts
 
 
 
@@ -53,7 +52,7 @@ class Tester(unittest.TestCase):
                                     cf1.get('options', 'Advance'),cf1.get('options','pass'),cf1.get('options','city1'),cf1.get('options','city2')]
 
         self.p3 = dujia_AddNewProduct.dujiaAdd(self.drive,self.Options,self.Contents,self.path,self.url,self.Time)
-        self.a = getlist_beta(self.url,self.data,self.path,self.Time)
+        self.c = PCchangetkicts.changetkicts(self.drive,self.url,self.data,self.Year,self.path,self.Time)
 
     def tearDown(self):
         self.drive.quit()
@@ -70,8 +69,9 @@ class Tester(unittest.TestCase):
     def test_en(self):
         self.p3.en()
 
-    def test_getlist(self):
-        self.a.getlist()
+    def test_change(self):
+        self.c.change()
+
 
 
 

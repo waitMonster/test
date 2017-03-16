@@ -20,6 +20,10 @@ class detil_main:
         self.drive.execute_script("var q=document.body.scrollTop=400")
         time.sleep(3)
 
+    def getcomfirm(self):
+        self.drive.get(self.url[1]+ urllib.urlencode(self.data[1]).replace('tuid','tuId').replace('pid','pId'))
+        time.sleep(3)
+
     def passenger_info_gj(self):
         self.drive.execute_script("var q=document.body.scrollTop=800")
         time.sleep(2)
