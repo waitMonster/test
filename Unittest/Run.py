@@ -11,7 +11,7 @@ from case.Main import SendMile
 
 if __name__ == '__main__':
     suite = unittest.TestSuite()
-    path = os.path.abspath('..')+'\\ApiTest\\result\\'
+    path = os.path.abspath('..')+'\\Data\\result\\'
     time = datetime.datetime.now().strftime('%Y%m%d%H%M')
     reportname = path+time+u'测试报告'+'.html'
     #suite.addTest(Tester.Tester("test_detile1"))

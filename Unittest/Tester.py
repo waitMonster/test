@@ -21,7 +21,7 @@ class Tester(unittest.TestCase):
         chrome_options.add_argument("user-data-dir="+os.path.abspath(profile_dir))
         chrome_options.add_argument("--disable-extensions")
         self.drive = webdriver.Chrome(chromeoath,chrome_options=chrome_options)
-        self.path = os.path.abspath('..')+'\\ApiTest\\result\\'
+        self.path = os.path.abspath('..')+'\\Data\\result\\'
         cf = ConfigParser.SafeConfigParser()
         conf_name = 'apicase.ini'
         cf.readfp(codecs.open(self.path+conf_name,'rb','utf_8'))
