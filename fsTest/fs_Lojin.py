@@ -10,21 +10,23 @@ import datetime
 class Login:
     def __init__(self):
         chromeoath = "C:\Program Files (x86)\Google\Chrome\Application\chromedriver.exe"
-        profile_dir = r"C:\Users\R.ALLEN\AppData\Local\Google\Chrome\User Data"
+        profile_dir = r"C:\Users\yaguang.zhang\AppData\Local\Google\Chrome\User Data"
         chrome_options = webdriver.ChromeOptions()
         chrome_options.add_argument("user-data-dir=" + os.path.abspath(profile_dir))
         chrome_options.add_argument("--disable-extensions")
         self.drive = webdriver.Chrome(chromeoath, chrome_options=chrome_options)
         #self.url = url
         #self.drive.get(self.url[3])
+        self.session = requests.session()
         self.r = ''
 
     def postlogin(self):
         oldlogin_url = 'https://www.fxiaoke.com/FHH/EM0HXUL/Authorize/Login'
         oldlogin_headers = {'Accept':'application/json'}
         oldlogin_params = {'EnterpriseAccount':'fktest','UserAccount':'linxl','Password':'123qwe'}
-        self.r = requests.post(oldlogin_url,data=oldlogin_params,headers=oldlogin_headers).content
-        print self.r
+        headers = self.session.get(oldlogin_url).headers
+        self.r = requests.post(oldlogin_url,data=oldlogin_params,headers=oldlogin_headers,verify=False).content
+        print headers
 
 
     def login_admin(self):
@@ -43,6 +45,10 @@ class Login:
         except:
             print u'登录失败'
 
+
+if __name__ == '__main__':
+    L = Login()
+    L.postlogin()
 
 
 
