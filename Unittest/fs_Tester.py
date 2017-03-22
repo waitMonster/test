@@ -46,22 +46,38 @@ class fs_datadevice:
     def Rxls_Data(self):
         nrows = self.table[1].nrows  # 行数
         ncols = self.table[1].ncols  # 列数
-        Data = []
-        Datas = {}
+        nData = []
+        params = []
+        params1 = []
+        Data_params = []
         for i in range(nrows):
-            data_data = self.table[1].row_values(i)
-            for j in data_data[:]:
-                if j == '':
-                    data_data.remove(j)
-            Data.append(data_data)
+            data = self.table[1].row_values(i)
+            for j in data[:]:
+                if not j:
+                    data.remove(j)
+            nData.append(data)
+        #print nData
 
-        for j in range(len(self.num)):
-            if j == 0:
-                for l in range(int(self.num[j] + str(1)), int(self.num[j + 1])):
-                    for k in range(len(Data[int(self.num[j])])):
-                        Datas[Data[int(self.num[j])][k]]=Data[l][k]
+        for k in range(len(self.num)):
+            for col in range(len(nData[int(self.num[k])])):
+                if k < (len(self.num)-1):
+                    for nro in range(int(self.num[k])+1,int(self.num[k+1])):
+                        param = self.table[1].cell(nro,col).value
+                        params.append(param)
 
-        print Datas
+                else:
+                    for nro in range(int(self.num[k])+1,nrows):
+                        param = self.table[1].cell(nro,col).value
+                        params.append(param)
+
+
+
+
+
+
+
+
+
 
 
 if __name__ == '__main__':
