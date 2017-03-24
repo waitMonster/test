@@ -9,8 +9,6 @@ from selenium import webdriver
 import os
 import time
 from collections import OrderedDict
-from pyexcel_xls import get_data
-from pyexcel_xls import save_data
 import xlrd
 import collections
 

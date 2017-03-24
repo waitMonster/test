@@ -19,7 +19,14 @@ class Api:
 
     def postlogin(self):
         oldlogin_url = self.oldlogin_url
-        oldlogin_headers = {'Accept':'application/json, text/javascript, */*; q=0.01','Content-Type':'application/json'}
+        #cookie = 'FSAuthXG=o060R1u2Mm40003IF9ZaKOAwPUGVP2y2IpvXPeD1HmAXJrceTCq5T1tk4dhfypWb6pIg9X4ULsX5t02'
+        oldlogin_headers = {'Accept':'application/json, text/javascript, */*; q=0.01',
+                            'Cache-Control':'no-cache',
+                            'Accept-Encoding':'gzip, deflate, br',
+                            'Accept-Language':'zh-CN,zh;q=0.8',
+                            'Connection':'keep-alive',
+                            'Content-Type':'application/json'}
+
         R_oldlogin = []
         try:
             for i in range(len(self.dict_params.get('StatusCode_oldlogin'))):
@@ -28,12 +35,12 @@ class Api:
                 oldlogin_params['UserAccount'] = self.dict_params.get('UserAccount')[i]
                 oldlogin_params['Password'] = self.dict_params.get('Password')[i]
                 oldlogin_params['PersistenceHint'] = self.dict_params.get('PersistenceHint')[i]
-                oldlogin_params['ClientId'] = self.dict_params.get('ClientId')[i]
+                oldlogin_params['ClientId'] = self.dict_params.get('ClientId_old')[i]
                 r = requests.post(oldlogin_url,data=oldlogin_params,headers=oldlogin_headers,verify=False)
                 self.cookies.append(r.cookies)
                 R_oldlogin.append(eval(r.content))
 
-            return R_oldlogin
+            print R_oldlogin
 
         except Exception,e:
             print e
@@ -41,7 +48,7 @@ class Api:
 
     def postcreatepro(self):
         createpro_url = self.oldlogin_url
-        createpro_headers = {'Accept':'application/json, text/javascript, */*; q=0.01','Content-Type':'application/json'}
+        createpro_headers = {'Content-Type':'application/json'}
         R_createpro = []
         try:
            for i in range(len(self.dict_params.get('StatusCode_createpro'))):
@@ -53,7 +60,7 @@ class Api:
                createpro_params['star'] = self.dict_params.get('star')[i]
                createpro_params['admins'] = self.dict_params.get('admins')[i]
                createpro_params['members'] = self.dict_params.get('members')[i]
-               createpro_params['ClientId'] = self.dict_params.get('ClientId')[i]
+               createpro_params['ClientId'] = self.dict_params.get('ClientId_cro')[i]
                createpro_params['backgroundID'] = self.dict_params.get('backgroundID')[i]
                template['categoryType'] = self.dict_params.get('categoryType')[i]
                template['id'] = self.dict_params.get('id')[i]
@@ -70,7 +77,7 @@ class Api:
 if __name__ == '__main__':
     A = Api()
     A.postlogin()
-    A.postcreatepro()
+    #A.postcreatepro()
 
 
 
