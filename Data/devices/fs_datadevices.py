@@ -16,6 +16,7 @@ import collections
 class fs_datadevice:
     def __init__(self,xls_name):
         self.path = os.path.abspath('..') + '\\Data\\fs_XLS\\'
+        print self.path
         self.xls_name = xls_name
         if os.path.exists(self.path + self.xls_name):
             self.xls_data = xlrd.open_workbook(self.path + self.xls_name)
@@ -38,6 +39,10 @@ class fs_datadevice:
 
         self.num = self.table[0].col_values(ncols - 1)
         del self.num[0]
+        for num in self.num[:]:
+            if not num:
+                self.num.remove(num)
+        print self.num
         return  dict(URL)
 
     #读取入参值
@@ -51,7 +56,7 @@ class fs_datadevice:
         for i in range(nrows):
             data = self.table[1].row_values(i)
             for j in data[:]:
-                if not j:
+                if j == '':
                     data.remove(j)
             nData.append(data)
         #print nData
@@ -77,7 +82,7 @@ class fs_datadevice:
             #STR = [params[s],params[s+1]]
             #Data_params.append(STR)
 
-
+        print dict_params
         return dict_params
 
 
