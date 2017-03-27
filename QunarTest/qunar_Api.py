@@ -10,10 +10,11 @@ from Data.devices import fs_datadevices
 
 class Api:
     def __init__(self):
+        #abc
         self.xls_name = 'qunar_test.xlsx'
         self.fs = fs_datadevices.fs_datadevice(self.xls_name)
-        self.loginx_url = self.fs.Rxls_Data().get('web_loginx')
-        self.addtraffic_url = self.fs.Rxls_Data().get('web_addtraffic')
+        self.loginx_url = self.fs.Rxls_URL().get('web_loginx')
+        self.addtraffic_url = self.fs.Rxls_URL().get('web_addtraffic')
         self.dict_params = self.fs.Rxls_Data()
         self.cookies = []
 
@@ -30,11 +31,11 @@ class Api:
             for i in range(len(self.dict_params.get('stauts_loginx'))):
                 loginx_data = {}
                 loginx_data['loginType'] = str(self.dict_params.get('loginType')[i])
-                loginx_data['username'] = str(self.dict_params.get('username')[i])
+                loginx_data['username'] = str(self.dict_params.get('username')[i]).encode(encoding='UTF-8')
                 loginx_data['password'] = str(self.dict_params.get('password')[i])
                 loginx_data['remember'] = str(self.dict_params.get('remember')[i])
                 r = requests.post(self.loginx_url,data=loginx_data,headers=loginx_headers,verify=False)
-                R_loginx.append(eval(r.content))
+                R_loginx.append(r.json())
 
             print R_loginx
 
