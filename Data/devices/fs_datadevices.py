@@ -40,7 +40,7 @@ class fs_datadevice:
 
         self.num = self.table[0].col_values(ncols - 1)
         del self.num[0]
-        return  dict(URL)
+        return  dict(URL)git 
 
     #读取入参值
     def Rxls_Data(self):
