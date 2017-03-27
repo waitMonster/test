@@ -39,15 +39,13 @@ class fs_datadevice:
 
         self.num = self.table[0].col_values(ncols - 1)
         del self.num[0]
-<<<<<<< HEAD
-        return  dict(URL)git 
-=======
         for num in self.num[:]:
             if not num:
                 self.num.remove(num)
+
         print self.num
         return  dict(URL)
->>>>>>> 9a944e9c31f3d68cdc912403a8315bb8deb7b43f
+
 
     #读取入参值
     def Rxls_Data(self):
