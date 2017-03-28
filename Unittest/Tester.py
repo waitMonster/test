@@ -8,7 +8,7 @@ import sys
 from selenium import webdriver
 import os
 import time
-from case import PCbeta_Calendar,PCbeta_Type,dujia_AddNewProduct,PCchangetkicts
+from case import PCbeta_Calendar,PCbeta_Type,dujia_AddNewProduct,PCchangetkicts,TimerTask
 
 
 
@@ -53,6 +53,7 @@ class Tester(unittest.TestCase):
 
         self.p3 = dujia_AddNewProduct.dujiaAdd(self.drive,self.Options,self.Contents,self.path,self.url,self.Time)
         self.c = PCchangetkicts.changetkicts(self.drive,self.url,self.data,self.Year,self.path,self.Time)
+        self.T = TimerTask.timerTask(self.drive)
 
     def tearDown(self):
         self.drive.quit()
@@ -71,6 +72,11 @@ class Tester(unittest.TestCase):
 
     def test_change(self):
         self.c.change()
+
+    def test_timeTask(self):
+        self.T.task()
+        self.T.check()
+
 
 
 

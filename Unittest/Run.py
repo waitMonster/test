@@ -18,7 +18,8 @@ if __name__ == '__main__':
     #suite.addTest(Tester.Tester("test_orderlist"))
     #suite.addTest(Tester.Tester("test_detil2"))
     #suite.addTest(Tester.Tester("test_en"))
-    suite.addTest(Tester.Tester("test_change"))
+    #suite.addTest(Tester.Tester("test_change"))
+    suite.addTest(Tester.Tester("test_timeTask"))
     #suite.addTest(appium_qunar.qunarAndroidTests("test_search"))
     #suite.addTest(appium_xiaomi.xiaomiAndroidTests("test_order"))
     #suite.addTest(appium_m.appium_m("test_mjd"))
@@ -27,12 +28,12 @@ if __name__ == '__main__':
     runner=HTMLTestRunner.HTMLTestRunner(stream=f,title='test report',description=u'report:')
     runner.run(suite)
     f.close()
-    cf = ConfigParser.SafeConfigParser()
-    conf_name = 'email.ini'
-    cf.readfp(codecs.open(path+conf_name,'rb','utf_8'))
-    emails = [cf.get('sdm1','user'),cf.get('sdm1','pwd'),cf.get('sdm1','to')]
-    S = SendMile.SendMail(emails[0],emails[1],emails[2],reportname)
-    S.send()
+    #cf = ConfigParser.SafeConfigParser()
+    #conf_name = 'email.ini'
+    #cf.readfp(codecs.open(path+conf_name,'rb','utf_8'))
+    #emails = [cf.get('sdm1','user'),cf.get('sdm1','pwd'),cf.get('sdm1','to')]
+    #S = SendMile.SendMail(emails[0],emails[1],emails[2],reportname)
+    #S.send()
 
 
 

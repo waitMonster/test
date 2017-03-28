@@ -15,17 +15,13 @@ from selenium.webdriver import ActionChains
 from selenium.webdriver.common import keys
 
 class timerTask:
-    def __init__(self):
-        lasttime = ''
-        chromeoath = "C:\Program Files (x86)\Google\Chrome\Application\chromedriver.exe"
-        profile_dir=r"C:\Users\yaguang.zhang\AppData\Local\Google\Chrome\User Data"
-        chrome_options=webdriver.ChromeOptions()
-        chrome_options.add_argument("user-data-dir="+os.path.abspath(profile_dir))
-        self.drive = webdriver.Chrome(chromeoath,chrome_options=chrome_options)
-        self.drive.get("http://beta.qschedule.corp.qunar.com/jobs.do")
+    def __init__(self,drive):
+        self.lasttime = ''
+        self.drive = drive
+        self.drive.get('http://beta.qschedule.corp.qunar.com/jobs.do')
 
     def task(self):
-        self.drive.find_element_by_xpath('//input[@name="jobName"]').send_keys('settlement.settlementTransQTask')
+        self.drive.find_element_by_xpath('//input[@name="jobName"]').send_keys('seat.sysSeatLoginInfoQTask')
         self.drive.find_element_by_xpath('//a[@id="search"]').click()
         try:
             for i in range(5):
@@ -35,19 +31,21 @@ class timerTask:
                 time.sleep(3)
                 self.drive.back()
             self.drive.refresh()
-            lasttime = self.drive.find_element_by_xpath('.//*[@id="table_report"]/tbody/tr/td[4]').text
-            if lasttime:
-                print u'操作页最新一次执行时间:'+lasttime+\
+            self.lasttime = self.drive.find_element_by_xpath('.//*[@id="table_report"]/tbody/tr/td[4]').text
+            if self.lasttime:
+                print u'操作页最新一次执行时间:'+self.lasttime+\
                       '############################'
             else:
                 print u'请查看日志详情'
-        except:
-            return -1
+
+        except Exception,e:
+            print e
+
 
     def check(self):
         true = u'已经完成'
         self.drive.forward()
-        self.drive.find_element_by_xpath('//a[@href="/tasks.do?jobName=settlement.settlementTransQTask"]').click()
+        self.drive.find_element_by_xpath('//a[@href="/tasks.do?jobName=seat.sysSeatLoginInfoQTask"]').click()
         try:
             for j in range(1,6):
                 status = self.drive.find_element_by_xpath('.//*[@id="taskTable"]/tr['+str(j)+']/td[2]').text
@@ -58,12 +56,8 @@ class timerTask:
             time = self.drive.find_element_by_xpath('.//*[@id="taskTable"]/tr[1]/td[4]').text
             print '###############################'+\
                   u'日志页最新一次执行时间:'+time
-            return 0
+
         except:
             print u'没有找到结果请查看日志'
-            return -1
 
-if __name__ == '__main__':
-    t = timerTask()
-    t.task()
-    t.check()
+

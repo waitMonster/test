@@ -21,7 +21,7 @@ class fs_datadevice:
         if os.path.exists(self.path + self.xls_name):
             self.xls_data = xlrd.open_workbook(self.path + self.xls_name)
         self.table = self.xls_data.sheets()
-        self.num = []
+
 
     #读取url
     def Rxls_URL(self):
