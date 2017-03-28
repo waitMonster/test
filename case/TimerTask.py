@@ -15,20 +15,21 @@ from selenium.webdriver import ActionChains
 from selenium.webdriver.common import keys
 
 class timerTask:
-    def __init__(self,drive):
+    def __init__(self,drive,task_name):
         self.lasttime = ''
+        self.task_name = task_name
         self.drive = drive
         self.drive.get('http://beta.qschedule.corp.qunar.com/jobs.do')
 
     def task(self):
-        self.drive.find_element_by_xpath('//input[@name="jobName"]').send_keys('seat.sysSeatLoginInfoQTask')
+        self.drive.find_element_by_xpath('//input[@name="jobName"]').send_keys(self.task_name)
         self.drive.find_element_by_xpath('//a[@id="search"]').click()
         try:
             for i in range(5):
                 self.drive.find_element_by_xpath('//a[@class="btn btn-mini btn-danger retry"]').click()
                 self.drive.implicitly_wait(5)
                 self.drive.find_element_by_xpath('//button[@class="btn btn-primary btn-mini ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only"]').click()
-                time.sleep(3)
+                time.sleep(2)
                 self.drive.back()
             self.drive.refresh()
             self.lasttime = self.drive.find_element_by_xpath('.//*[@id="table_report"]/tbody/tr/td[4]').text
@@ -45,7 +46,7 @@ class timerTask:
     def check(self):
         true = u'已经完成'
         self.drive.forward()
-        self.drive.find_element_by_xpath('//a[@href="/tasks.do?jobName=seat.sysSeatLoginInfoQTask"]').click()
+        self.drive.find_element_by_xpath('//a[@href="/tasks.do?jobName='+self.task_name+'"]').click()
         try:
             for j in range(1,6):
                 status = self.drive.find_element_by_xpath('.//*[@id="taskTable"]/tr['+str(j)+']/td[2]').text

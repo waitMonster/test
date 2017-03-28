@@ -53,7 +53,8 @@ class Tester(unittest.TestCase):
 
         self.p3 = dujia_AddNewProduct.dujiaAdd(self.drive,self.Options,self.Contents,self.path,self.url,self.Time)
         self.c = PCchangetkicts.changetkicts(self.drive,self.url,self.data,self.Year,self.path,self.Time)
-        self.T = TimerTask.timerTask(self.drive)
+        self.task_name = 'seat.sysSeatLoginInfoQTask'
+        self.T = TimerTask.timerTask(self.drive,self.task_name)
 
     def tearDown(self):
         self.drive.quit()
