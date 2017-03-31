@@ -7,6 +7,8 @@ from selenium import webdriver
 import os
 import datetime
 from Data.devices import fs_datadevices
+import json
+import httplib
 
 class Api:
     def __init__(self):
@@ -22,20 +24,23 @@ class Api:
         R_loginx = []
         loginx_headers = {'Accept':'application/json, text/javascript, */*; q=0.01',
                             'Cache-Control':'no-cache',
-                            'Accept-Encoding':'gzip, deflate, br',
+                            'Accept-Encoding':'UTF-8',
                             'Accept-Language':'zh-CN,zh;q=0.8',
                             'Connection':'keep-alive',
-                            'Content-Type':'aapplication/x-www-form-urlencoded; charset=UTF-8'}
+                            'Content-Type':'application/x-www-form-urlencoded; charset=UTF-8'}
 
+        headers = eval(str(loginx_headers).replace('\'','"'))
         try:
             for i in range(len(self.dict_params.get('stauts_loginx'))):
                 loginx_data = {}
-                loginx_data['loginType'] = str(self.dict_params.get('loginType')[i])
-                loginx_data['username'] = str(self.dict_params.get('username')[i]).encode(encoding='UTF-8')
+                loginx_data['username'] = str(self.dict_params.get('username')[i])
                 loginx_data['password'] = str(self.dict_params.get('password')[i])
                 loginx_data['remember'] = str(self.dict_params.get('remember')[i])
-                r = requests.post(self.loginx_url,data=loginx_data,headers=loginx_headers,verify=False)
-                R_loginx.append(r.json())
+                loginx_data['loginType'] = str(self.dict_params.get('loginType')[i])
+                data = urllib.urlencode(loginx_data)
+                r = requests.post(self.loginx_url,data=data,headers=headers,verify=False)
+                R_loginx.append(r.content)
+                print type(r.status_code)
 
             print R_loginx
 

@@ -7,6 +7,7 @@ from selenium import webdriver
 import os
 import datetime
 from Data.devices import fs_datadevices
+import json
 
 class Api:
     def __init__(self):
@@ -48,11 +49,11 @@ class Api:
                 oldlogin_params['UserAccount'] = str(self.dict_params.get('UserAccount')[i])
                 oldlogin_params['Password'] = str(self.dict_params.get('Password')[i])
                 oldlogin_params['PersistenceHint'] = str(self.dict_params.get('PersistenceHint')[i])
-                oldlogin_params['ImgCode'] = str(eval(str(self.dict_params.get('ImgCode')).replace(' ',''))[i])
+                #oldlogin_params['ImgCode'] = str(eval(str(self.dict_params.get('ImgCode')).replace(' ',''))[i])
                 oldlogin_params['ClientId'] = str(self.dict_params.get('ClientId_old')[i])
-                r = requests.post(oldlogin_url,data=oldlogin_params,json=oldlogin_headers,cookies=cookie,verify=False)
-                self.cookies.append(r.cookies)
-                R_oldlogin.append(eval(r.content))
+                params = json.dumps(oldlogin_params)
+                r = requests.post(oldlogin_url,data=params,headers=oldlogin_headers,verify=False)
+                R_oldlogin.append(r.json())
                 print oldlogin_params
 
             print R_oldlogin
