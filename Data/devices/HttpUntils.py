@@ -11,10 +11,11 @@ import json
 import httplib
 import logging
 class HttpUntils:
-    def __init__(self,url,data,headers):
+    def __init__(self,url,data,headers,cookies):
         self.url = url
         self.data = data
         self.herders = headers
+        self.cookies = cookies
         logging.basicConfig(level=logging.DEBUG,
                 format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
                 datefmt='%a, %d %b %Y %H:%M:%S',
@@ -29,27 +30,71 @@ class HttpUntils:
         logging.getLogger('').addHandler(console)
         #################################################################################################
 
-    def GetTest(self):
+    def Get(self):
         get_data = urllib.urlencode(self.data)
         try:
-           r = requests.get(self.url+get_data)
+           r = requests.get(self.url+get_data,verify=False)
            if r.status_code == 200:
-               repeson = eval(r.content)
-               logging.info('accept succsse')
-               return repeson
+               return r
            elif r.status_code in [502,504]:
                logging.warning('Gateway Time-out')
            else:
                logging.warning('sever is error')
 
+           return r
+
         except requests.ConnectionError,e:
             print e
 
-    def PostTest(self):
+    def Post(self):
         if 'x-www-form-urlencoded' in self.herders.get('Content-Type'):
             Post_data = urllib.urlencode(self.data)
+        elif 'json' in self.herders.get('Content-Type'):
+            Post_data = json.dumps(self.data)
         else:
             Post_data = self.data
+        try:
+           r = requests.post(self.url,data=Post_data,headers=self.herders,verify=False)
+           if r.status_code == 200:
+               return r
+           elif r.status_code in [502,504]:
+               logging.warning('Gateway Time-out')
+           else:
+               logging.warning('sever is error')
+
+           return r
+
+        except requests.ConnectionError,e:
+            print e
+
+
+    def Post_cookies(self):
+        if 'x-www-form-urlencoded' in self.herders.get('Content-Type'):
+            Post_data = urllib.urlencode(self.data)
+        elif 'json' in self.herders.get('Content-Type'):
+            Post_data = json.dumps(self.data)
+        else:
+            Post_data = self.data
+        try:
+           r = requests.post(self.url,data=Post_data,headers=self.herders,cookies=self.cookies,verify=False)
+           if r.status_code == 200:
+               return r
+           elif r.status_code in [502,504]:
+               logging.warning('Gateway Time-out')
+           else:
+               logging.warning('sever is error')
+
+           return r
+
+        except requests.ConnectionError,e:
+            print e
+
+
+
+
+
+
+
 
 
 

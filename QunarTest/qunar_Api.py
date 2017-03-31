@@ -3,10 +3,11 @@ import codecs
 import time
 import urllib2,urllib
 import requests
+from requests.cookies import RequestsCookieJar
 from selenium import webdriver
 import os
 import datetime
-from Data.devices import fs_datadevices
+from Data.devices import fs_datadevices,HttpUntils,Cookies
 import json
 import httplib
 
@@ -18,7 +19,8 @@ class Api:
         self.loginx_url = self.fs.Rxls_URL().get('web_loginx')
         self.addtraffic_url = self.fs.Rxls_URL().get('web_addtraffic')
         self.dict_params = self.fs.Rxls_Data()
-        self.cookies = []
+        self.cookies = RequestsCookieJar()
+
 
     def loginx(self):
         R_loginx = []
@@ -37,11 +39,9 @@ class Api:
                 loginx_data['password'] = str(self.dict_params.get('password')[i])
                 loginx_data['remember'] = str(self.dict_params.get('remember')[i])
                 loginx_data['loginType'] = str(self.dict_params.get('loginType')[i])
-                data = urllib.urlencode(loginx_data)
-                r = requests.post(self.loginx_url,data=data,headers=headers,verify=False)
-                R_loginx.append(r.content)
-                print type(r.status_code)
-
+                http = HttpUntils.HttpUntils(self.loginx_url,loginx_data,loginx_headers,self.cookies)
+                result = http.Post()
+                R_loginx.append(result.content)
             print R_loginx
 
         except Exception,e:
