@@ -6,8 +6,9 @@ import os
 import datetime
 from Unittest import Tester
 import HTMLTestRunner
-from Unittest import appium_qunar,appium_m,appium_xiaomi
+from Unittest import appium_qunar,appium_m
 from case.Main import SendMile
+from fsTest import PC_Api_Project
 
 if __name__ == '__main__':
     suite = unittest.TestSuite()
@@ -19,10 +20,11 @@ if __name__ == '__main__':
     #suite.addTest(Tester.Tester("test_detil2"))
     #suite.addTest(Tester.Tester("test_en"))
     #suite.addTest(Tester.Tester("test_change"))
-    suite.addTest(Tester.Tester("test_timeTask"))
+    #suite.addTest(Tester.Tester("test_timeTask"))
     #suite.addTest(appium_qunar.qunarAndroidTests("test_search"))
     #suite.addTest(appium_xiaomi.xiaomiAndroidTests("test_order"))
     #suite.addTest(appium_m.appium_m("test_mjd"))
+    suite.addTest(PC_Api_Project.Project("test_postcreatepro"))
     if not os.path.exists(reportname):
                 f = open(reportname,'wb')
     runner=HTMLTestRunner.HTMLTestRunner(stream=f,title='test report',description=u'report:')

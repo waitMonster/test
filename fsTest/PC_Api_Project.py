@@ -8,49 +8,29 @@ from selenium import webdriver
 import os
 import datetime
 from Data.devices import fs_datadevices,HttpUntils
-import json
+import json,unittest
+from ApiMain import Login,LoginOff
 
-class Api:
-    def __init__(self):
+class Project(unittest.TestCase):
+    def setUp(self):
         self.xls_name = 'fs_apitest.xlsx'
         self.fs = fs_datadevices.fs_datadevice(self.xls_name)
         self.oldlogin_url = self.fs.Rxls_URL().get('web_oldlogin')
         self.createpro_url = self.fs.Rxls_URL().get('web_createproject')
         self.dict_params = self.fs.Rxls_Data()
         self.cookies = RequestsCookieJar()
-        self.params = []
+        self.loginoff_url = self.fs.Rxls_URL().get('web_loginoff')
+        self.L = Login.PC_Login(self.oldlogin_url, self.dict_params, self.cookies)
+        self.Cookies = self.L.oldlogin()
+        self.token = []
+        for i in range(len(self.Cookies)):
+            self.token.append(dict(self.Cookies[i]).get('fs_token'))
+        self.F = LoginOff.PC_LoginOff(self.loginoff_url,self.token,self.cookies)
 
-    def postlogin(self):
-        oldlogin_headers = {'Accept':'application/json, text/javascript, */*; q=0.01',
-                            'Cache-Control':'no-cache',
-                            'Accept-Encoding':'gzip, deflate, br',
-                            'Accept-Language':'zh-CN,zh;q=0.8',
-                            'Connection':'keep-alive',
-                            'Content-Type':'application/json'}
-        R_oldlogin = []
-        try:
-            for i in range(len(self.dict_params.get('StatusCode_oldlogin'))):
-                oldlogin_params = {}
-                oldlogin_params['EnterpriseAccount'] = str(self.dict_params.get('EnterpriseAccount')[i])
-                oldlogin_params['UserAccount'] = str(self.dict_params.get('UserAccount')[i])
-                oldlogin_params['Password'] = str(self.dict_params.get('Password')[i])
-                oldlogin_params['PersistenceHint'] = str(self.dict_params.get('PersistenceHint')[i])
-                #oldlogin_params['ImgCode'] = str(eval(str(self.dict_params.get('ImgCode')).replace(' ',''))[i])
-                oldlogin_params['ClientId'] = str(self.dict_params.get('ClientId_old')[i])
-                http = HttpUntils.HttpUntils(self.oldlogin_url,oldlogin_params,oldlogin_headers,self.cookies)
-                result = http.Post()
-                R_oldlogin.append(result.json())
-                if oldlogin_params.get('UserAccount') == 'linxl':
-                    self.cookies = result.cookies
+    def tearDown(self):
+        self.F.loginoff()
 
-            print R_oldlogin
-
-
-        except Exception,e:
-            print e
-
-
-    def postcreatepro(self):
+    def test_postcreatepro(self):
         createpro_headers = {'Content-Type':'application/json'}
         R_createpro = []
         try:
@@ -68,7 +48,7 @@ class Api:
                template['categoryType'] = str(self.dict_params.get('categoryType')[i])
                template['id'] = str(self.dict_params.get('id')[i])
                createpro_params['template'] = template
-               http = HttpUntils.HttpUntils(self.createpro_url,createpro_params,createpro_headers,self.cookies)
+               http = HttpUntils.HttpUntils(self.createpro_url,createpro_params,createpro_headers,self.Cookies[0])
                result = http.Post_cookies()
                R_createpro.append(result.json())
 
@@ -77,11 +57,7 @@ class Api:
         except Exception,e:
             print e
 
-
-if __name__ == '__main__':
-    A = Api()
-    A.postlogin()
-    A.postcreatepro()
+    #A.postcreatepro()
 
 
 

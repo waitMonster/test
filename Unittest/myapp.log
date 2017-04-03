@@ -1,0 +1,12 @@
+Tue, 04 Apr 2017 00:22:49 connectionpool.py[line:818] DEBUG Starting new HTTPS connection (1): www.fxiaoke.com
+Tue, 04 Apr 2017 00:22:49 connectionpool.py[line:395] DEBUG https://www.fxiaoke.com:443 "POST /FHH/EM0HXUL/Authorize/Login HTTP/1.1" 200 183
+Tue, 04 Apr 2017 00:22:58 connectionpool.py[line:818] DEBUG Starting new HTTPS connection (1): www.fxiaoke.com
+Tue, 04 Apr 2017 00:22:58 connectionpool.py[line:395] DEBUG https://www.fxiaoke.com:443 "POST /FHH/EM1HPM/projectWebCtrl/createProject?traceId=E-E.fktest.183-48487451&_fs_token=OpWrCZ0uE64jCJWoDoqqCZCqBM8sCpOjE3GqOZSqOc4oDpCo HTTP/1.1" 200 190
+Tue, 04 Apr 2017 00:23:07 connectionpool.py[line:818] DEBUG Starting new HTTPS connection (1): www.fxiaoke.com
+Tue, 04 Apr 2017 00:23:07 connectionpool.py[line:395] DEBUG https://www.fxiaoke.com:443 "POST /FHH/EM1HPM/projectWebCtrl/createProject?traceId=E-E.fktest.183-48487451&_fs_token=OpWrCZ0uE64jCJWoDoqqCZCqBM8sCpOjE3GqOZSqOc4oDpCo HTTP/1.1" 200 190
+Tue, 04 Apr 2017 00:23:16 connectionpool.py[line:818] DEBUG Starting new HTTPS connection (1): www.fxiaoke.com
+Tue, 04 Apr 2017 00:23:17 connectionpool.py[line:395] DEBUG https://www.fxiaoke.com:443 "POST /FHH/EM1HPM/projectWebCtrl/createProject?traceId=E-E.fktest.183-48487451&_fs_token=OpWrCZ0uE64jCJWoDoqqCZCqBM8sCpOjE3GqOZSqOc4oDpCo HTTP/1.1" 200 190
+Tue, 04 Apr 2017 00:23:26 connectionpool.py[line:818] DEBUG Starting new HTTPS connection (1): www.fxiaoke.com
+Tue, 04 Apr 2017 00:23:26 connectionpool.py[line:395] DEBUG https://www.fxiaoke.com:443 "POST /FHH/EM1HPM/projectWebCtrl/createProject?traceId=E-E.fktest.183-48487451&_fs_token=OpWrCZ0uE64jCJWoDoqqCZCqBM8sCpOjE3GqOZSqOc4oDpCo HTTP/1.1" 200 190
+Tue, 04 Apr 2017 00:23:35 connectionpool.py[line:818] DEBUG Starting new HTTPS connection (1): www.fxiaoke.com
+Tue, 04 Apr 2017 00:23:35 connectionpool.py[line:395] DEBUG https://www.fxiaoke.com:443 "POST /FHH/EM1HPM/projectWebCtrl/createProject?traceId=E-E.fktest.183-48487451&_fs_token=OpWrCZ0uE64jCJWoDoqqCZCqBM8sCpOjE3GqOZSqOc4oDpCo HTTP/1.1" 200 190

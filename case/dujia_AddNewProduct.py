@@ -3,7 +3,7 @@ import ConfigParser
 import codecs
 from lib2to3.pgen2 import driver
 import new
-import paramiko
+
 
 import time
 import fractions

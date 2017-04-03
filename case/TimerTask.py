@@ -5,7 +5,7 @@ from lib2to3.pgen2 import driver
 import time
 import fractions
 import sysconfig
-import paramiko
+
 
 import select
 import os,sys
