@@ -4,7 +4,7 @@ import codecs
 import unittest
 import os
 import datetime
-from Unittest import Tester
+import Tester
 import HTMLTestRunner
 from Unittest import appium_qunar,appium_m
 from case.Main import SendMile
