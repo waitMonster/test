@@ -9,7 +9,7 @@ import os
 import datetime
 from Data.devices import fs_datadevices,HttpUntils
 import json,unittest
-from ApiMain import Login,LoginOff
+from ApiMain import Login,LoginOff,Delproject
 
 class Project(unittest.TestCase):
     def setUp(self):
@@ -30,7 +30,12 @@ class Project(unittest.TestCase):
         self.projectID = []
 
     def tearDown(self):
-        self.F.loginoff()
+        if self.projectID:
+            self.D = Delproject.Delproject(self.delproject_url,self.projectID,self.Cookies)
+            self.D.delproject()
+            self.F.loginoff()
+        else:
+            self.F.loginoff()
 
     def test_postcreatepro(self):
         createpro_headers = {'Content-Type':'application/json'}
@@ -54,24 +59,12 @@ class Project(unittest.TestCase):
                result = http.Post_cookies()
                id = result.json().get('Value').get('projectId')
                self.projectID.append(id)
-               self.assertEqual(str(result.json().get('StatusCode')),str(self.dict_params.get('StatusCode_createpro')))
-
+               self.assertEquals(str(self.dict_params.get('StatusCode_createpro')[i]),str(result.json().get('Result').get('StatusCode')))
+           print self.projectID
         except Exception,e:
             print e
 
-    def test_DelProject(self):
-        delproject_headers = {'Content-Type':'application/json;charset=UTF-8'}
-        try:
-            for i in range(len(self.projectID)):
-                delproject_params = {}
-                delproject_params['projectId'] = str(self.projectID[i])
-                http = HttpUntils.HttpUntils(self.delproject_url,delproject_params,delproject_headers,self.Cookies[0])
-                result = http.Post_cookies()
-                self.assertEqual(str(result.json().get('Result').get('StatusCode')),str(self.dict_params.get('StatusCode_createpro')))
-                self.assertEqual(result.json().get('Value').get('status'),1)
 
-        except Exception,e:
-            print e
 
 
 
