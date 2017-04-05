@@ -8,7 +8,7 @@ import sys
 from selenium import webdriver
 import os
 import time
-from case import PCbeta_Calendar,PCbeta_Type,dujia_AddNewProduct,PCchangetkicts,TimerTask
+
 
 
 

@@ -29,15 +29,21 @@ class Search_home(unittest.TestCase):
                             'device':'SBnmKQzYMYzOc3Z4dEKkdw==',
                             'Uuid':'bb023da5-01d5-1ec7-52c4-102f08fa927d',
                             'Network-Stat':'wifi',
-                            'Accept-Encoding':'gzip'}
+                            'Accept-Encoding':'gzip',
+                            'Mishop-Client-Id':'180100031052',
+                            'Mishop-Client-VersionName':'4.2.2.0406.01',
+                            'Mishop-Client-VersionCode':'20170401',
+                            'Mishop-Is-Pad':'0',
+                            'Device-Id':'00000000-122a-31eb-586e-7cce0033c587'}
 
         for i in range(len(self.dict_params.get('desc'))):
             hisearch_params = {}
-            hisearch_params['input_word'] = str(self.dict_params.get('input_word')[i])
-            hisearch_params['query'] = str(self.dict_params.get('query')[i])
-            hisearch_params['page_index'] = str(self.dict_params.get('page_index')[i])
-            hisearch_params['checkbox'] = str(self.dict_params.get('checkbox')[i])
-            hisearch_params['page_size'] = str(self.dict_params.get('page_size')[i])
+            hisearch_params['input_word'] = self.dict_params.get('input_word')[i]
+            hisearch_params['query'] = self.dict_params.get('query')[i]
+            hisearch_params['page_index'] = self.dict_params.get('page_index')[i]
+            hisearch_params['checkbox'] = self.dict_params.get('checkbox')[i]
+            hisearch_params['page_size'] = self.dict_params.get('page_size')[i]
             http = HttpUntils.HttpUntils(self.hisearch_url,hisearch_params,hisearch_headers,self.cookies)
             result = http.Post()
-            print str(eval(result.content).get('desc'))+'\n'
+            print eval(result.content).get('code')
+
