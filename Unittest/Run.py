@@ -23,8 +23,9 @@ if __name__ == '__main__':
     #suite.addTest(Tester.Tester("test_timeTask"))
     #suite.addTest(appium_qunar.qunarAndroidTests("test_search"))
     #suite.addTest(appium_xiaomi.xiaomiAndroidTests("test_order"))
-    #suite.addTest(appium_m.appium_m("test_mjd"))
+    #suite.addTest(appium_m.appium_m("test_mjd"))';
     suite.addTest(PC_Api_Project.Project("test_postcreatepro"))
+    suite.addTest(PC_Api_Project.Project("test_postprojectlist"))
     if not os.path.exists(reportname):
                 f = open(reportname,'wb')
     runner=HTMLTestRunner.HTMLTestRunner(stream=f,title='test report',description=u'report:')

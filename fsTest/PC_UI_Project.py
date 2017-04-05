@@ -10,6 +10,4 @@ import datetime
 from Data.devices import fs_datadevices,HttpUntils
 import json
 
-class UI:
-    def __init__(self,drive):
-        self.drive = drive
+

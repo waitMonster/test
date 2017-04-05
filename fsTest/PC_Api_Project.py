@@ -19,6 +19,7 @@ class Project(unittest.TestCase):
         self.createpro_url = self.fs.Rxls_URL().get('web_createproject')
         self.loginoff_url = self.fs.Rxls_URL().get('web_loginoff')
         self.delproject_url = self.fs.Rxls_URL().get('web_delproject')
+        self.list_url = self.fs.Rxls_URL().get('web_projectlist')
         self.dict_params = self.fs.Rxls_Data()
         self.cookies = RequestsCookieJar()
         self.L = Login.PC_Login(self.oldlogin_url, self.dict_params, self.cookies)
@@ -40,29 +41,40 @@ class Project(unittest.TestCase):
     def test_postcreatepro(self):
         createpro_headers = {'Content-Type':'application/json'}
         #R_createpro = []
-        try:
-           for i in range(len(self.dict_params.get('StatusCode_createpro'))):
-               createpro_params = {}
-               template = {}
-               createpro_params['creatorId'] = str(self.dict_params.get('creatorId')[i])
-               createpro_params['name'] = str(self.dict_params.get('name')[i])
-               createpro_params['description'] = str(self.dict_params.get('description')[i])
-               createpro_params['star'] = str(self.dict_params.get('star')[i])
-               createpro_params['admins'] = eval(self.dict_params.get('admins')[i])
-               createpro_params['members'] = eval(self.dict_params.get('members')[i])
-               #createpro_params['ClientId'] = str(self.dict_params.get('ClientId_cro')[i])
-               createpro_params['backgroundID'] = str(self.dict_params.get('backgroundID')[i])
-               template['categoryType'] = str(self.dict_params.get('categoryType')[i])
-               template['id'] = str(self.dict_params.get('id')[i])
-               createpro_params['template'] = template
-               http = HttpUntils.HttpUntils(self.createpro_url,createpro_params,createpro_headers,self.Cookies[0])
-               result = http.Post_cookies()
-               id = result.json().get('Value').get('projectId')
-               self.projectID.append(id)
-               self.assertEquals(str(self.dict_params.get('StatusCode_createpro')[i]),str(result.json().get('Result').get('StatusCode')))
-           print self.projectID
-        except Exception,e:
-            print e
+        for i in range(len(self.dict_params.get('StatusCode_createpro'))):
+            createpro_params = {}
+            template = {}
+            createpro_params['creatorId'] = str(self.dict_params.get('creatorId')[i])
+            createpro_params['name'] = str(self.dict_params.get('name')[i])
+            createpro_params['description'] = str(self.dict_params.get('description')[i])
+            createpro_params['star'] = str(self.dict_params.get('star')[i])
+            createpro_params['admins'] = eval(self.dict_params.get('admins')[i])
+            createpro_params['members'] = eval(self.dict_params.get('members')[i])
+            #createpro_params['ClientId'] = str(self.dict_params.get('ClientId_cro')[i])
+            createpro_params['backgroundID'] = str(self.dict_params.get('backgroundID')[i])
+            template['categoryType'] = str(self.dict_params.get('categoryType')[i])
+            template['id'] = str(self.dict_params.get('id')[i])
+            createpro_params['template'] = template
+            http = HttpUntils.HttpUntils(self.createpro_url,createpro_params,createpro_headers,self.Cookies[0])
+            result = http.Post_cookies()
+            id = result.json().get('Value').get('projectId')
+            self.projectID.append(id)
+            self.assertEquals(str(self.dict_params.get('StatusCode_createpro')[i]),str(result.json().get('Result').get('StatusCode')))
+        print self.projectID
+
+    def test_postprojectlist(self):
+        list_headers = {'Content-Type':'application/json'}
+        list_params = {}
+        list_params['orderType'] = str(self.dict_params.get('orderType')[0])
+        http = HttpUntils.HttpUntils(self.list_url,list_params,list_headers,self.Cookies[0])
+        result = http.Post_cookies()
+        ProjectList = result.json().get('Value').get('myProjectList')
+        for i in range(len(ProjectList)):
+            self.projectID.append(ProjectList[i].get('projectId'))
+        self.assertEquals(0,result.json().get('Result').get('StatusCode'))
+
+        print self.projectID
+
 
 
 
