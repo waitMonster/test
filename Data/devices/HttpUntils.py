@@ -41,8 +41,6 @@ class HttpUntils:
            else:
                logging.warning('sever is error')
 
-           return r
-
         except requests.ConnectionError,e:
             print e
 
@@ -61,8 +59,6 @@ class HttpUntils:
                logging.warning('Gateway Time-out')
            else:
                logging.warning('sever is error')
-
-           return r
 
         except requests.ConnectionError,e:
             print e
@@ -83,8 +79,6 @@ class HttpUntils:
                logging.warning('Gateway Time-out')
            else:
                logging.warning('sever is error')
-
-           return r
 
         except requests.ConnectionError,e:
             print e

@@ -189,9 +189,9 @@ function showOutput(id, name) {
 
 <div class='heading'>
 <h1>test report</h1>
-<p class='attribute'><strong>Start Time:</strong> 2017-04-04 00:19:01</p>
-<p class='attribute'><strong>Duration:</strong> 0:00:09.475000</p>
-<p class='attribute'><strong>Status:</strong> Error 1</p>
+<p class='attribute'><strong>Start Time:</strong> 2017-04-05 12:29:10</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:00.363000</p>
+<p class='attribute'><strong>Status:</strong> Pass 2</p>
 
 <p class='description'>report:</p>
 </div>
@@ -221,42 +221,75 @@ function showOutput(id, name) {
     <td>View</td>
 </tr>
 
-<tr class='errorClass'>
+<tr class='passClass'>
     <td>fsTest.PC_Api_Project.Project</td>
-    <td>1</td>
+    <td>2</td>
+    <td>2</td>
     <td>0</td>
     <td>0</td>
-    <td>1</td>
-    <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
+    <td><a href="javascript:showClassDetail('c1',2)">Detail</a></td>
 </tr>
 
-<tr id='ft1.1' class='none'>
-    <td class='errorCase'><div class='testcase'>test_postcreatepro</div></td>
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_postcreatepro</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1')" >
-        error</a>
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        pass</a>
 
-    <div id='div_ft1.1' class="popup_window">
+    <div id='div_pt1.1' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.1').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-ft1.1: F:\ZygTest\Data\fs_XLS\
+pt1.1: D:\ZygTest\Data\fs_XLS\
 [u'0', u'3']
 [u'0', u'3']
-{u'star': [u'false', u'true', u'false', u'true', u'false'], u'PersistenceHint': [u'true', u'true'], u'backgroundID': [u'G_201605_15_4c9263bd425a47d3a73210bb5860bfc4.png', u'G_201605_15_4c9263bd425a47d3a73210bb5860bfc4.png', u'G_201605_15_4c9263bd425a47d3a73210bb5860bfc4.png', u'G_201605_15_4c9263bd425a47d3a73210bb5860bfc4.png', u'G_201605_15_4c9263bd425a47d3a73210bb5860bfc4.png'], u'creatorId': [u'183', u'183', u'183', u'183', u'183'], u'description': [u'aaaaaaaaaaaaaaaa', u'bbbbbbbbbbbbbbbb', u'cccccccccccccccc', u'dddddddddddddddd', u'eeeeeeeeeeeeeeee'], u'ImgCode': [u' ', u' '], u'name': [u'pro111a', u'pro222b', u'pro333c', u'pro444d', u'pro555e'], u'StatusCode_createpro': [u'0', u'0', u'0', u'0', u'0'], u'admins': [u'[183]', u'[183]', u'[183]', u'[183]', u'[183]'], u'ClientId_old': [u'1490261809077', u'1490261809077'], u'members': [u'[183,1759,1864]', u'[183,1759,1864]', u'[183,1759,1864]', u'[183,1759,1864]', u'[183,1759,1864]'], u'EnterpriseAccount': [u'fktest', u'158833'], u'UserAccount': [u'linxl', u'13511035140'], u'ClientId_cro': [u'1490261809077', u'1490261809077', u'1490261809077', u'1490261809077', u'1490261809077'], u'Password': [u'123qwe', u'a123456'], u'categoryType': [u'1', u'1', u'1', u'1', u'1'], u'id': [u'5833b8a0c35c1841c64d0331', u'5833b8a0c35c1841c64d0331', u'5833b8a0c35c1841c64d0331', u'5833b8a0c35c1841c64d0331', u'5833b8a0c35c1841c64d0331'], u'StatusCode_oldlogin': [u'0', u'0']}
 [u'0', u'3']
-D:\python\lib\site-packages\requests\packages\urllib3\connectionpool.py:852: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+[u'0', u'3']
+{u'star': [u'false', u'true', u'false', u'true', u'false'], u'PersistenceHint': [u'true', u'true'], u'backgroundID': [u'G_201605_15_4c9263bd425a47d3a73210bb5860bfc4.png', u'G_201605_15_4c9263bd425a47d3a73210bb5860bfc4.png', u'G_201605_15_4c9263bd425a47d3a73210bb5860bfc4.png', u'G_201605_15_4c9263bd425a47d3a73210bb5860bfc4.png', u'G_201605_15_4c9263bd425a47d3a73210bb5860bfc4.png'], u'creatorId': [u'183', u'183', u'183', u'183', u'183'], u'description': [u'aaaaaaaaaaaaaaaa', u'bbbbbbbbbbbbbbbb', u'cccccccccccccccc', u'dddddddddddddddd', u'eeeeeeeeeeeeeeee'], u'ImgCode': [u' ', u' '], u'name': [u'pro111aaa', u'pro222bbb', u'pro333ccc', u'pro444ddd', u'pro555eee'], u'StatusCode_createpro': [u'0', u'0', u'0', u'0', u'0'], u'admins': [u'[183]', u'[183]', u'[183]', u'[183]', u'[183]'], u'ClientId_old': [u'1490261809077', u'1490261809077'], u'members': [u'[183,1759,1864]', u'[183,1759,1864]', u'[183,1759,1864]', u'[183,1759,1864]', u'[183,1759,1864]'], u'EnterpriseAccount': [u'fktest', u'158833'], u'UserAccount': [u'linxl', u'13511035140'], u'ClientId_cro': [u'1490261809077', u'1490261809077', u'1490261809077', u'1490261809077', u'1490261809077'], u'Password': [u'123qwe', u'a123456'], u'categoryType': [u'1', u'1', u'1', u'1', u'1'], u'id': [u'5833b8a0c35c1841c64d0331', u'5833b8a0c35c1841c64d0331', u'5833b8a0c35c1841c64d0331', u'5833b8a0c35c1841c64d0331', u'5833b8a0c35c1841c64d0331'], u'StatusCode_oldlogin': [u'0', u'0']}
+D:\python2.7\lib\site-packages\requests\packages\urllib3\connectionpool.py:843: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
   InsecureRequestWarning)
-PC_Login instance has no attribute 'Cookies'
-Traceback (most recent call last):
-  File "F:\ZygTest\fsTest\PC_Api_Project.py", line 25, in setUp
-    for i in range(len(self.L.oldlogin())):
-TypeError: object of type 'NoneType' has no len()
+D:\python2.7\lib\site-packages\requests\packages\urllib3\connectionpool.py:843: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)
+'None' != "[u'0', u'0', u'0', u'0', u'0']"
+range() integer end argument expected, got list.
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_DelProject</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.2')" >
+        pass</a>
+
+    <div id='div_pt1.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.2: D:\ZygTest\Data\fs_XLS\
+[u'0', u'3']
+[u'0', u'3']
+[u'0', u'3']
+[u'0', u'3']
+{u'star': [u'false', u'true', u'false', u'true', u'false'], u'PersistenceHint': [u'true', u'true'], u'backgroundID': [u'G_201605_15_4c9263bd425a47d3a73210bb5860bfc4.png', u'G_201605_15_4c9263bd425a47d3a73210bb5860bfc4.png', u'G_201605_15_4c9263bd425a47d3a73210bb5860bfc4.png', u'G_201605_15_4c9263bd425a47d3a73210bb5860bfc4.png', u'G_201605_15_4c9263bd425a47d3a73210bb5860bfc4.png'], u'creatorId': [u'183', u'183', u'183', u'183', u'183'], u'description': [u'aaaaaaaaaaaaaaaa', u'bbbbbbbbbbbbbbbb', u'cccccccccccccccc', u'dddddddddddddddd', u'eeeeeeeeeeeeeeee'], u'ImgCode': [u' ', u' '], u'name': [u'pro111aaa', u'pro222bbb', u'pro333ccc', u'pro444ddd', u'pro555eee'], u'StatusCode_createpro': [u'0', u'0', u'0', u'0', u'0'], u'admins': [u'[183]', u'[183]', u'[183]', u'[183]', u'[183]'], u'ClientId_old': [u'1490261809077', u'1490261809077'], u'members': [u'[183,1759,1864]', u'[183,1759,1864]', u'[183,1759,1864]', u'[183,1759,1864]', u'[183,1759,1864]'], u'EnterpriseAccount': [u'fktest', u'158833'], u'UserAccount': [u'linxl', u'13511035140'], u'ClientId_cro': [u'1490261809077', u'1490261809077', u'1490261809077', u'1490261809077', u'1490261809077'], u'Password': [u'123qwe', u'a123456'], u'categoryType': [u'1', u'1', u'1', u'1', u'1'], u'id': [u'5833b8a0c35c1841c64d0331', u'5833b8a0c35c1841c64d0331', u'5833b8a0c35c1841c64d0331', u'5833b8a0c35c1841c64d0331', u'5833b8a0c35c1841c64d0331'], u'StatusCode_oldlogin': [u'0', u'0']}
+D:\python2.7\lib\site-packages\requests\packages\urllib3\connectionpool.py:843: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)
+range() integer end argument expected, got list.
 
 
         </pre>
@@ -268,10 +301,10 @@ TypeError: object of type 'NoneType' has no len()
 
 <tr id='total_row'>
     <td>Total</td>
-    <td>1</td>
+    <td>2</td>
+    <td>2</td>
     <td>0</td>
     <td>0</td>
-    <td>1</td>
     <td>&nbsp;</td>
 </tr>
 </table>
