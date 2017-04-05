@@ -7,8 +7,7 @@ import datetime
 import Tester
 import HTMLTestRunner
 from Unittest import appium_qunar,appium_m
-from case.Main import SendMile
-from fsTest import PC_Api_Project
+from ApiTest.mstroe import Search_home
 
 if __name__ == '__main__':
     suite = unittest.TestSuite()
@@ -24,8 +23,7 @@ if __name__ == '__main__':
     #suite.addTest(appium_qunar.qunarAndroidTests("test_search"))
     #suite.addTest(appium_xiaomi.xiaomiAndroidTests("test_order"))
     #suite.addTest(appium_m.appium_m("test_mjd"))';
-    suite.addTest(PC_Api_Project.Project("test_postcreatepro"))
-    suite.addTest(PC_Api_Project.Project("test_postprojectlist"))
+    suite.addTest(Search_home.Search_home("test_postsearch"))
     if not os.path.exists(reportname):
                 f = open(reportname,'wb')
     runner=HTMLTestRunner.HTMLTestRunner(stream=f,title='test report',description=u'report:')

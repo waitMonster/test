@@ -1,5 +1,0 @@
-Mon, 03 Apr 2017 22:42:25 connectionpool.py[line:818] DEBUG Starting new HTTPS connection (1): www.fxiaoke.com
-Mon, 03 Apr 2017 22:42:26 connectionpool.py[line:395] DEBUG https://www.fxiaoke.com:443 "POST /FHH/EM0HXUL/Authorize/Login HTTP/1.1" 200 183
-Mon, 03 Apr 2017 22:42:35 connectionpool.py[line:818] DEBUG Starting new HTTPS connection (1): www.fxiaoke.com
-Mon, 03 Apr 2017 22:42:35 connectionpool.py[line:395] DEBUG https://www.fxiaoke.com:443 "POST /FHH/EM0HXUL/Authorize/Login HTTP/1.1" 200 196
-
