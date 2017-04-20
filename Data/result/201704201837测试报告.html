@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>test report</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 500px;
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>test report</h1>
+<p class='attribute'><strong>Start Time:</strong> 2017-04-20 18:37:56</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:02.929000</p>
+<p class='attribute'><strong>Status:</strong> Pass 2</p>
+
+<p class='description'>report:</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='passClass'>
+    <td>fsTest.PC_Api_Project.Project</td>
+    <td>2</td>
+    <td>2</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',2)">Detail</a></td>
+</tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_postcreatepro</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        pass</a>
+
+    <div id='div_pt1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.1: E:\ZygTest\Data\fs_XLS\
+[u'0', u'3', u'9']
+[u'0', u'3', u'9']
+[u'0', u'3', u'9']
+[u'0', u'3', u'9']
+[u'0', u'3', u'9']
+{u'star': [u'false', u'true', u'false', u'true', u'false'], u'PersistenceHint': [u'true', u'true'], u'backgroundID': [u'G_201605_15_4c9263bd425a47d3a73210bb5860bfc4.png', u'G_201605_15_4c9263bd425a47d3a73210bb5860bfc4.png', u'G_201605_15_4c9263bd425a47d3a73210bb5860bfc4.png', u'G_201605_15_4c9263bd425a47d3a73210bb5860bfc4.png', u'G_201605_15_4c9263bd425a47d3a73210bb5860bfc4.png'], u'creatorId': [u'183', u'183', u'183', u'183', u'183'], u'description': [u'aaaaaaaaaaaaaaaa', u'bbbbbbbbbbbbbbbb', u'cccccccccccccccc', u'dddddddddddddddd', u'eeeeeeeeeeeeeeee'], u'ImgCode': [u' ', u' '], u'orderType': [u'1'], u'name': [u'pro111aaa', u'pro222bbb', u'pro333ccc', u'pro444ddd', u'pro555eee'], u'StatusCode_createpro': [u'0', u'0', u'0', u'0', u'0'], u'admins': [u'[183]', u'[183]', u'[183]', u'[183]', u'[183]'], u'ClientId_old': [u'1490261809077', u'1490261809077'], u'members': [u'[183,1759,1864]', u'[183,1759,1864]', u'[183,1759,1864]', u'[183,1759,1864]', u'[183,1759,1864]'], u'EnterpriseAccount': [u'fktest', u'158833'], u'UserAccount': [u'linxl', u'13511035140'], u'ClientId_cro': [u'1490261809077', u'1490261809077', u'1490261809077', u'1490261809077', u'1490261809077'], u'Password': [u'123qwe', u'a123456'], u'categoryType': [u'1', u'1', u'1', u'1', u'1'], u'id': [u'5833b8a0c35c1841c64d0331', u'5833b8a0c35c1841c64d0331', u'5833b8a0c35c1841c64d0331', u'5833b8a0c35c1841c64d0331', u'5833b8a0c35c1841c64d0331'], u'StatusCode_oldlogin': [u'0', u'0']}
+D:\python\lib\site-packages\requests\packages\urllib3\connectionpool.py:852: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)
+D:\python\lib\site-packages\requests\packages\urllib3\connectionpool.py:852: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)
+D:\python\lib\site-packages\requests\packages\urllib3\connectionpool.py:852: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)
+D:\python\lib\site-packages\requests\packages\urllib3\connectionpool.py:852: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)
+D:\python\lib\site-packages\requests\packages\urllib3\connectionpool.py:852: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)
+D:\python\lib\site-packages\requests\packages\urllib3\connectionpool.py:852: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)
+[u'58f88f85c35c184817fbc35f', u'58f88f85c35c184817fbc360', u'58f88f85a4a7109371187305', u'58f88f86a4a7109371187306', u'58f88f86a4a7109371187307']
+D:\python\lib\site-packages\requests\packages\urllib3\connectionpool.py:852: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)
+{u'Result': {u'UserInfo': {u'EmployeeID': 183, u'EnterpriseAccount': u'fktest'}, u'FailureCode': 0, u'StatusCode': 0}, u'Value': {u'status': 1, u'serviceTime': 1492684678340L}}
+
+D:\python\lib\site-packages\requests\packages\urllib3\connectionpool.py:852: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)
+{u'Result': {u'UserInfo': {u'EmployeeID': 183, u'EnterpriseAccount': u'fktest'}, u'FailureCode': 0, u'StatusCode': 0}, u'Value': {u'status': 1, u'serviceTime': 1492684678393L}}
+
+D:\python\lib\site-packages\requests\packages\urllib3\connectionpool.py:852: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)
+{u'Result': {u'UserInfo': {u'EmployeeID': 183, u'EnterpriseAccount': u'fktest'}, u'FailureCode': 0, u'StatusCode': 0}, u'Value': {u'status': 1, u'serviceTime': 1492684678448L}}
+
+D:\python\lib\site-packages\requests\packages\urllib3\connectionpool.py:852: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)
+{u'Result': {u'UserInfo': {u'EmployeeID': 183, u'EnterpriseAccount': u'fktest'}, u'FailureCode': 0, u'StatusCode': 0}, u'Value': {u'status': 1, u'serviceTime': 1492684678502L}}
+
+D:\python\lib\site-packages\requests\packages\urllib3\connectionpool.py:852: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)
+{u'Result': {u'UserInfo': {u'EmployeeID': 183, u'EnterpriseAccount': u'fktest'}, u'FailureCode': 0, u'StatusCode': 0}, u'Value': {u'status': 1, u'serviceTime': 1492684678558L}}
+
+range() integer end argument expected, got list.
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_postprojectlist</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.2')" >
+        pass</a>
+
+    <div id='div_pt1.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.2: E:\ZygTest\Data\fs_XLS\
+[u'0', u'3', u'9']
+[u'0', u'3', u'9']
+[u'0', u'3', u'9']
+[u'0', u'3', u'9']
+[u'0', u'3', u'9']
+{u'star': [u'false', u'true', u'false', u'true', u'false'], u'PersistenceHint': [u'true', u'true'], u'backgroundID': [u'G_201605_15_4c9263bd425a47d3a73210bb5860bfc4.png', u'G_201605_15_4c9263bd425a47d3a73210bb5860bfc4.png', u'G_201605_15_4c9263bd425a47d3a73210bb5860bfc4.png', u'G_201605_15_4c9263bd425a47d3a73210bb5860bfc4.png', u'G_201605_15_4c9263bd425a47d3a73210bb5860bfc4.png'], u'creatorId': [u'183', u'183', u'183', u'183', u'183'], u'description': [u'aaaaaaaaaaaaaaaa', u'bbbbbbbbbbbbbbbb', u'cccccccccccccccc', u'dddddddddddddddd', u'eeeeeeeeeeeeeeee'], u'ImgCode': [u' ', u' '], u'orderType': [u'1'], u'name': [u'pro111aaa', u'pro222bbb', u'pro333ccc', u'pro444ddd', u'pro555eee'], u'StatusCode_createpro': [u'0', u'0', u'0', u'0', u'0'], u'admins': [u'[183]', u'[183]', u'[183]', u'[183]', u'[183]'], u'ClientId_old': [u'1490261809077', u'1490261809077'], u'members': [u'[183,1759,1864]', u'[183,1759,1864]', u'[183,1759,1864]', u'[183,1759,1864]', u'[183,1759,1864]'], u'EnterpriseAccount': [u'fktest', u'158833'], u'UserAccount': [u'linxl', u'13511035140'], u'ClientId_cro': [u'1490261809077', u'1490261809077', u'1490261809077', u'1490261809077', u'1490261809077'], u'Password': [u'123qwe', u'a123456'], u'categoryType': [u'1', u'1', u'1', u'1', u'1'], u'id': [u'5833b8a0c35c1841c64d0331', u'5833b8a0c35c1841c64d0331', u'5833b8a0c35c1841c64d0331', u'5833b8a0c35c1841c64d0331', u'5833b8a0c35c1841c64d0331'], u'StatusCode_oldlogin': [u'0', u'0']}
+D:\python\lib\site-packages\requests\packages\urllib3\connectionpool.py:852: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)
+D:\python\lib\site-packages\requests\packages\urllib3\connectionpool.py:852: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)
+[u'5844cb34a4a710659440c3c2', u'582c3349a4a7103960df9716', u'57fa1e52c35c18e02cb5db74', u'57fa1031c35c18e02cb5db5c', u'579c4fe9c35c184865312a97', u'5742d113e4b032fc97c089af', u'5732d80de4b05fe1dc10b76c', u'57329e10e4b05fe1dc10b713', u'57305cd6c35c182c8b75785b', u'572c0e2fa4a7104b267a36e8', u'572abb4ec35c18b97b9bd0ad', u'5722c778a4a710daade65717', u'5721ef4ca4a71022ab703e60', u'5721b05cc35c18f98c614397']
+D:\python\lib\site-packages\requests\packages\urllib3\connectionpool.py:852: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)
+{u'Result': {u'UserInfo': {u'EmployeeID': 183, u'EnterpriseAccount': u'fktest'}, u'FailureCode': 0, u'StatusCode': 0}, u'Value': {u'status': -1, u'message': u'\u4e0d\u662f\u9879\u76ee\u7ba1\u7406\u5458\uff0c\u4e0d\u53ef\u4ee5\u5220\u9664', u'serviceTime': 1492684678786L}}
+
+D:\python\lib\site-packages\requests\packages\urllib3\connectionpool.py:852: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)
+{u'Result': {u'UserInfo': {u'EmployeeID': 183, u'EnterpriseAccount': u'fktest'}, u'FailureCode': 0, u'StatusCode': 0}, u'Value': {u'status': -1, u'message': u'\u4e0d\u662f\u9879\u76ee\u7ba1\u7406\u5458\uff0c\u4e0d\u53ef\u4ee5\u5220\u9664', u'serviceTime': 1492684678837L}}
+
+D:\python\lib\site-packages\requests\packages\urllib3\connectionpool.py:852: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)
+{u'Result': {u'UserInfo': {u'EmployeeID': 183, u'EnterpriseAccount': u'fktest'}, u'FailureCode': 0, u'StatusCode': 0}, u'Value': {u'status': -1, u'message': u'\u4e0d\u662f\u9879\u76ee\u7ba1\u7406\u5458\uff0c\u4e0d\u53ef\u4ee5\u5220\u9664', u'serviceTime': 1492684678889L}}
+
+D:\python\lib\site-packages\requests\packages\urllib3\connectionpool.py:852: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)
+{u'Result': {u'UserInfo': {u'EmployeeID': 183, u'EnterpriseAccount': u'fktest'}, u'FailureCode': 0, u'StatusCode': 0}, u'Value': {u'status': -1, u'message': u'\u4e0d\u662f\u9879\u76ee\u7ba1\u7406\u5458\uff0c\u4e0d\u53ef\u4ee5\u5220\u9664', u'serviceTime': 1492684678941L}}
+
+D:\python\lib\site-packages\requests\packages\urllib3\connectionpool.py:852: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)
+{u'Result': {u'UserInfo': {u'EmployeeID': 183, u'EnterpriseAccount': u'fktest'}, u'FailureCode': 0, u'StatusCode': 0}, u'Value': {u'status': -1, u'message': u'\u4e0d\u662f\u9879\u76ee\u7ba1\u7406\u5458\uff0c\u4e0d\u53ef\u4ee5\u5220\u9664', u'serviceTime': 1492684678992L}}
+
+D:\python\lib\site-packages\requests\packages\urllib3\connectionpool.py:852: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)
+{u'Result': {u'UserInfo': {u'EmployeeID': 183, u'EnterpriseAccount': u'fktest'}, u'FailureCode': 0, u'StatusCode': 0}, u'Value': {u'status': -1, u'message': u'\u4e0d\u662f\u9879\u76ee\u7ba1\u7406\u5458\uff0c\u4e0d\u53ef\u4ee5\u5220\u9664', u'serviceTime': 1492684679039L}}
+
+D:\python\lib\site-packages\requests\packages\urllib3\connectionpool.py:852: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)
+{u'Result': {u'UserInfo': {u'EmployeeID': 183, u'EnterpriseAccount': u'fktest'}, u'FailureCode': 0, u'StatusCode': 0}, u'Value': {u'status': -1, u'message': u'\u4e0d\u662f\u9879\u76ee\u7ba1\u7406\u5458\uff0c\u4e0d\u53ef\u4ee5\u5220\u9664', u'serviceTime': 1492684679090L}}
+
+D:\python\lib\site-packages\requests\packages\urllib3\connectionpool.py:852: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)
+{u'Result': {u'UserInfo': {u'EmployeeID': 183, u'EnterpriseAccount': u'fktest'}, u'FailureCode': 0, u'StatusCode': 0}, u'Value': {u'status': -1, u'message': u'\u4e0d\u662f\u9879\u76ee\u7ba1\u7406\u5458\uff0c\u4e0d\u53ef\u4ee5\u5220\u9664', u'serviceTime': 1492684679138L}}
+
+D:\python\lib\site-packages\requests\packages\urllib3\connectionpool.py:852: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)
+{u'Result': {u'UserInfo': {u'EmployeeID': 183, u'EnterpriseAccount': u'fktest'}, u'FailureCode': 0, u'StatusCode': 0}, u'Value': {u'status': -1, u'message': u'\u4e0d\u662f\u9879\u76ee\u7ba1\u7406\u5458\uff0c\u4e0d\u53ef\u4ee5\u5220\u9664', u'serviceTime': 1492684679188L}}
+
+D:\python\lib\site-packages\requests\packages\urllib3\connectionpool.py:852: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)
+{u'Result': {u'UserInfo': {u'EmployeeID': 183, u'EnterpriseAccount': u'fktest'}, u'FailureCode': 0, u'StatusCode': 0}, u'Value': {u'status': -1, u'message': u'\u4e0d\u662f\u9879\u76ee\u7ba1\u7406\u5458\uff0c\u4e0d\u53ef\u4ee5\u5220\u9664', u'serviceTime': 1492684679231L}}
+
+D:\python\lib\site-packages\requests\packages\urllib3\connectionpool.py:852: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)
+{u'Result': {u'UserInfo': {u'EmployeeID': 183, u'EnterpriseAccount': u'fktest'}, u'FailureCode': 0, u'StatusCode': 0}, u'Value': {u'status': -1, u'message': u'\u4e0d\u662f\u9879\u76ee\u7ba1\u7406\u5458\uff0c\u4e0d\u53ef\u4ee5\u5220\u9664', u'serviceTime': 1492684679271L}}
+
+D:\python\lib\site-packages\requests\packages\urllib3\connectionpool.py:852: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)
+{u'Result': {u'UserInfo': {u'EmployeeID': 183, u'EnterpriseAccount': u'fktest'}, u'FailureCode': 0, u'StatusCode': 0}, u'Value': {u'status': -1, u'message': u'\u4e0d\u662f\u9879\u76ee\u7ba1\u7406\u5458\uff0c\u4e0d\u53ef\u4ee5\u5220\u9664', u'serviceTime': 1492684679309L}}
+
+D:\python\lib\site-packages\requests\packages\urllib3\connectionpool.py:852: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)
+{u'Result': {u'UserInfo': {u'EmployeeID': 183, u'EnterpriseAccount': u'fktest'}, u'FailureCode': 0, u'StatusCode': 0}, u'Value': {u'status': -1, u'message': u'\u4e0d\u662f\u9879\u76ee\u7ba1\u7406\u5458\uff0c\u4e0d\u53ef\u4ee5\u5220\u9664', u'serviceTime': 1492684679561L}}
+
+D:\python\lib\site-packages\requests\packages\urllib3\connectionpool.py:852: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)
+{u'Result': {u'UserInfo': {u'EmployeeID': 183, u'EnterpriseAccount': u'fktest'}, u'FailureCode': 0, u'StatusCode': 0}, u'Value': {u'status': -1, u'message': u'\u4e0d\u662f\u9879\u76ee\u7ba1\u7406\u5458\uff0c\u4e0d\u53ef\u4ee5\u5220\u9664', u'serviceTime': 1492684679606L}}
+
+range() integer end argument expected, got list.
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>2</td>
+    <td>2</td>
+    <td>0</td>
+    <td>0</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>

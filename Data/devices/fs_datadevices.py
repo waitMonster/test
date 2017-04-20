@@ -22,7 +22,6 @@ class fs_datadevice:
             self.xls_data = xlrd.open_workbook(self.path + self.xls_name)
         self.table = self.xls_data.sheets()
 
-
     #读取url
     def Rxls_URL(self):
         nrows = self.table[0].nrows  # 行数
