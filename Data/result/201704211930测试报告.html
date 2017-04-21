@@ -189,9 +189,9 @@ function showOutput(id, name) {
 
 <div class='heading'>
 <h1>test report</h1>
-<p class='attribute'><strong>Start Time:</strong> 2017-04-05 20:12:22</p>
-<p class='attribute'><strong>Duration:</strong> 0:00:03.623000</p>
-<p class='attribute'><strong>Status:</strong> Error 2</p>
+<p class='attribute'><strong>Start Time:</strong> 2017-04-21 19:30:21</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:00.758000</p>
+<p class='attribute'><strong>Status:</strong> Failure 3</p>
 
 <p class='description'>report:</p>
 </div>
@@ -221,22 +221,22 @@ function showOutput(id, name) {
     <td>View</td>
 </tr>
 
-<tr class='errorClass'>
-    <td>fsTest.PC_Api_Project.Project</td>
-    <td>2</td>
+<tr class='failClass'>
+    <td>V_gomeplus.Search.Search_ApiTest.Search_ApiTest</td>
+    <td>3</td>
     <td>0</td>
+    <td>3</td>
     <td>0</td>
-    <td>2</td>
-    <td><a href="javascript:showClassDetail('c1',2)">Detail</a></td>
+    <td><a href="javascript:showClassDetail('c1',3)">Detail</a></td>
 </tr>
 
 <tr id='ft1.1' class='none'>
-    <td class='errorCase'><div class='testcase'>test_postcreatepro</div></td>
+    <td class='failCase'><div class='testcase'>test_search</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
     <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1')" >
-        error</a>
+        fail</a>
 
     <div id='div_ft1.1' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
@@ -245,26 +245,12 @@ function showOutput(id, name) {
         </div>
         <pre>
         
-ft1.1: D:\ZygTest\Data\fs_XLS\
-[u'0', u'3', u'9']
-[u'0', u'3', u'9']
-[u'0', u'3', u'9']
-[u'0', u'3', u'9']
-[u'0', u'3', u'9']
-{u'star': [u'false', u'true', u'false', u'true', u'false'], u'PersistenceHint': [u'true', u'true'], u'backgroundID': [u'G_201605_15_4c9263bd425a47d3a73210bb5860bfc4.png', u'G_201605_15_4c9263bd425a47d3a73210bb5860bfc4.png', u'G_201605_15_4c9263bd425a47d3a73210bb5860bfc4.png', u'G_201605_15_4c9263bd425a47d3a73210bb5860bfc4.png', u'G_201605_15_4c9263bd425a47d3a73210bb5860bfc4.png'], u'creatorId': [u'183', u'183', u'183', u'183', u'183'], u'description': [u'aaaaaaaaaaaaaaaa', u'bbbbbbbbbbbbbbbb', u'cccccccccccccccc', u'dddddddddddddddd', u'eeeeeeeeeeeeeeee'], u'ImgCode': [u' ', u' '], u'orderType': [u'1'], u'name': [u'pro111aaa', u'pro222bbb', u'pro333ccc', u'pro444ddd', u'pro555eee'], u'StatusCode_createpro': [u'0', u'0', u'0', u'0', u'0'], u'admins': [u'[183]', u'[183]', u'[183]', u'[183]', u'[183]'], u'ClientId_old': [u'1490261809077', u'1490261809077'], u'members': [u'[183,1759,1864]', u'[183,1759,1864]', u'[183,1759,1864]', u'[183,1759,1864]', u'[183,1759,1864]'], u'EnterpriseAccount': [u'fktest', u'158833'], u'UserAccount': [u'linxl', u'13511035140'], u'ClientId_cro': [u'1490261809077', u'1490261809077', u'1490261809077', u'1490261809077', u'1490261809077'], u'Password': [u'123qwe', u'a123456'], u'categoryType': [u'1', u'1', u'1', u'1', u'1'], u'id': [u'5833b8a0c35c1841c64d0331', u'5833b8a0c35c1841c64d0331', u'5833b8a0c35c1841c64d0331', u'5833b8a0c35c1841c64d0331', u'5833b8a0c35c1841c64d0331'], u'StatusCode_oldlogin': [u'0', u'0']}
-D:\python2.7\lib\site-packages\requests\packages\urllib3\connectionpool.py:843: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
-  InsecureRequestWarning)
-D:\python2.7\lib\site-packages\requests\packages\urllib3\connectionpool.py:843: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
-  InsecureRequestWarning)
-D:\python2.7\lib\site-packages\requests\packages\urllib3\connectionpool.py:843: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
-  InsecureRequestWarning)
-root        : WARNING  Gateway Time-out
-root        : WARNING  Gateway Time-out
-root        : WARNING  Gateway Time-out
+ft1.1: E:\ZygTest\Data\fs_XLS\
+{u'size': [u'2', u'3', u'4', u'5', u'6'], u'code_img': [u'200', u'200', u'200', u'200', u'200'], u'loginName': [u'13511035140', u'13511035140', u' ', u'13511035140', u' '], u'name': [u'wang', u'zhang', u'li', u'zhao', u'yang'], u'platform': [u'pc', u'h5', u'm', u'ios', u'android'], u'message_img': [u'success', u'success', u'success', u'success', u'success'], u'code_pub': [u'200', u'200', u'200', u'200', u'200'], u'captchaType': [u'login', u'login', u'login', u'login', u'login'], u'loginType': [u'1', u'1', u'1', u'1', u'1'], u'captcha': [u' ', u' ', u' ', u' ', u' '], u'message_pub': [u'success', u'success', u'success', u'success', u'success'], u'code': [u'200', u'200', u'200', u'200', u'200'], u'chkRememberUsername': [u'1', u'1', u'1', u'1', u'1'], u'gomeOrCoo8': [u'gome', u'gome', u'gome', u'gome', u'gome'], u'agreeFlag': [u'radiobutton', u'radiobutton', u'radiobutton', u'radiobutton', u'radiobutton'], u'message': [u'success', u'success', u'success', u'success', u'success'], u'password': [u'89692938', u'123456789', u'89692938', u' ', u' '], u'auth': [u'95PCQUKMWLR,95PCQUKMWLR,95PCQUKMWLR,95PCQUKMWLR', u'LJFO9#82@1R,853&amp;($jerolJR,LWO(#)34F,LWO(#)34F', u'o3(32%#&amp;HLE,(204JLR$#^FK,QERJ&amp;#9TO394,QERJ&amp;#9TO394', u'5)&amp;7932kr&amp;24,($492RW*(3,MGOQW54@#$0W,MGOQW54@#$0W', u'92(82#$40SO3%2,SFW($(#qFW,3WFT(#&amp;23t,3WFT(#&amp;23t'], u'page': [u'1', u'2', u'3', u'4', u'5'], u'device_id': [u'142821', u'142821', u'142821', u'F2LNTAWLG5R1', u'1ea6e8e0']}
 Traceback (most recent call last):
-  File "D:\ZygTest\fsTest\PC_Api_Project.py", line 60, in test_postcreatepro
-    id = result.json().get('Value').get('projectId')
-AttributeError: 'NoneType' object has no attribute 'json'
+  File "E:\ZygTest\V_gomeplus\Search\Search_ApiTest.py", line 54, in test_search
+    self.assertEqual(self.dict_params.get('code')[j],eval(respeson.content).get('code'))
+AssertionError: u'200' != 200
 
 
         </pre>
@@ -275,12 +261,12 @@ AttributeError: 'NoneType' object has no attribute 'json'
 </tr>
 
 <tr id='ft1.2' class='none'>
-    <td class='errorCase'><div class='testcase'>test_postprojectlist</div></td>
+    <td class='failCase'><div class='testcase'>test_searchpublisher</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
     <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.2')" >
-        error</a>
+        fail</a>
 
     <div id='div_ft1.2' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
@@ -289,21 +275,42 @@ AttributeError: 'NoneType' object has no attribute 'json'
         </div>
         <pre>
         
-ft1.2: D:\ZygTest\Data\fs_XLS\
-[u'0', u'3', u'9']
-[u'0', u'3', u'9']
-[u'0', u'3', u'9']
-[u'0', u'3', u'9']
-[u'0', u'3', u'9']
-{u'star': [u'false', u'true', u'false', u'true', u'false'], u'PersistenceHint': [u'true', u'true'], u'backgroundID': [u'G_201605_15_4c9263bd425a47d3a73210bb5860bfc4.png', u'G_201605_15_4c9263bd425a47d3a73210bb5860bfc4.png', u'G_201605_15_4c9263bd425a47d3a73210bb5860bfc4.png', u'G_201605_15_4c9263bd425a47d3a73210bb5860bfc4.png', u'G_201605_15_4c9263bd425a47d3a73210bb5860bfc4.png'], u'creatorId': [u'183', u'183', u'183', u'183', u'183'], u'description': [u'aaaaaaaaaaaaaaaa', u'bbbbbbbbbbbbbbbb', u'cccccccccccccccc', u'dddddddddddddddd', u'eeeeeeeeeeeeeeee'], u'ImgCode': [u' ', u' '], u'orderType': [u'1'], u'name': [u'pro111aaa', u'pro222bbb', u'pro333ccc', u'pro444ddd', u'pro555eee'], u'StatusCode_createpro': [u'0', u'0', u'0', u'0', u'0'], u'admins': [u'[183]', u'[183]', u'[183]', u'[183]', u'[183]'], u'ClientId_old': [u'1490261809077', u'1490261809077'], u'members': [u'[183,1759,1864]', u'[183,1759,1864]', u'[183,1759,1864]', u'[183,1759,1864]', u'[183,1759,1864]'], u'EnterpriseAccount': [u'fktest', u'158833'], u'UserAccount': [u'linxl', u'13511035140'], u'ClientId_cro': [u'1490261809077', u'1490261809077', u'1490261809077', u'1490261809077', u'1490261809077'], u'Password': [u'123qwe', u'a123456'], u'categoryType': [u'1', u'1', u'1', u'1', u'1'], u'id': [u'5833b8a0c35c1841c64d0331', u'5833b8a0c35c1841c64d0331', u'5833b8a0c35c1841c64d0331', u'5833b8a0c35c1841c64d0331', u'5833b8a0c35c1841c64d0331'], u'StatusCode_oldlogin': [u'0', u'0']}
-D:\python2.7\lib\site-packages\requests\packages\urllib3\connectionpool.py:843: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
-  InsecureRequestWarning)
-D:\python2.7\lib\site-packages\requests\packages\urllib3\connectionpool.py:843: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
-  InsecureRequestWarning)
+ft1.2: E:\ZygTest\Data\fs_XLS\
+{u'size': [u'2', u'3', u'4', u'5', u'6'], u'code_img': [u'200', u'200', u'200', u'200', u'200'], u'loginName': [u'13511035140', u'13511035140', u' ', u'13511035140', u' '], u'name': [u'wang', u'zhang', u'li', u'zhao', u'yang'], u'platform': [u'pc', u'h5', u'm', u'ios', u'android'], u'message_img': [u'success', u'success', u'success', u'success', u'success'], u'code_pub': [u'200', u'200', u'200', u'200', u'200'], u'captchaType': [u'login', u'login', u'login', u'login', u'login'], u'loginType': [u'1', u'1', u'1', u'1', u'1'], u'captcha': [u' ', u' ', u' ', u' ', u' '], u'message_pub': [u'success', u'success', u'success', u'success', u'success'], u'code': [u'200', u'200', u'200', u'200', u'200'], u'chkRememberUsername': [u'1', u'1', u'1', u'1', u'1'], u'gomeOrCoo8': [u'gome', u'gome', u'gome', u'gome', u'gome'], u'agreeFlag': [u'radiobutton', u'radiobutton', u'radiobutton', u'radiobutton', u'radiobutton'], u'message': [u'success', u'success', u'success', u'success', u'success'], u'password': [u'89692938', u'123456789', u'89692938', u' ', u' '], u'auth': [u'95PCQUKMWLR,95PCQUKMWLR,95PCQUKMWLR,95PCQUKMWLR', u'LJFO9#82@1R,853&amp;($jerolJR,LWO(#)34F,LWO(#)34F', u'o3(32%#&amp;HLE,(204JLR$#^FK,QERJ&amp;#9TO394,QERJ&amp;#9TO394', u'5)&amp;7932kr&amp;24,($492RW*(3,MGOQW54@#$0W,MGOQW54@#$0W', u'92(82#$40SO3%2,SFW($(#qFW,3WFT(#&amp;23t,3WFT(#&amp;23t'], u'page': [u'1', u'2', u'3', u'4', u'5'], u'device_id': [u'142821', u'142821', u'142821', u'F2LNTAWLG5R1', u'1ea6e8e0']}
 Traceback (most recent call last):
-  File "D:\ZygTest\fsTest\PC_Api_Project.py", line 71, in test_postprojectlist
-    ProjectList = result.json().get('Value').get('myProjectList')
-AttributeError: 'unicode' object has no attribute 'get'
+  File "E:\ZygTest\V_gomeplus\Search\Search_ApiTest.py", line 73, in test_searchpublisher
+    self.assertEqual(self.dict_params.get('code_pub')[j],eval(respeson.content).get('code'))
+AssertionError: u'200' != 200
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.3' class='none'>
+    <td class='failCase'><div class='testcase'>test_searchimage</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.3')" >
+        fail</a>
+
+    <div id='div_ft1.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.3: E:\ZygTest\Data\fs_XLS\
+{u'size': [u'2', u'3', u'4', u'5', u'6'], u'code_img': [u'200', u'200', u'200', u'200', u'200'], u'loginName': [u'13511035140', u'13511035140', u' ', u'13511035140', u' '], u'name': [u'wang', u'zhang', u'li', u'zhao', u'yang'], u'platform': [u'pc', u'h5', u'm', u'ios', u'android'], u'message_img': [u'success', u'success', u'success', u'success', u'success'], u'code_pub': [u'200', u'200', u'200', u'200', u'200'], u'captchaType': [u'login', u'login', u'login', u'login', u'login'], u'loginType': [u'1', u'1', u'1', u'1', u'1'], u'captcha': [u' ', u' ', u' ', u' ', u' '], u'message_pub': [u'success', u'success', u'success', u'success', u'success'], u'code': [u'200', u'200', u'200', u'200', u'200'], u'chkRememberUsername': [u'1', u'1', u'1', u'1', u'1'], u'gomeOrCoo8': [u'gome', u'gome', u'gome', u'gome', u'gome'], u'agreeFlag': [u'radiobutton', u'radiobutton', u'radiobutton', u'radiobutton', u'radiobutton'], u'message': [u'success', u'success', u'success', u'success', u'success'], u'password': [u'89692938', u'123456789', u'89692938', u' ', u' '], u'auth': [u'95PCQUKMWLR,95PCQUKMWLR,95PCQUKMWLR,95PCQUKMWLR', u'LJFO9#82@1R,853&amp;($jerolJR,LWO(#)34F,LWO(#)34F', u'o3(32%#&amp;HLE,(204JLR$#^FK,QERJ&amp;#9TO394,QERJ&amp;#9TO394', u'5)&amp;7932kr&amp;24,($492RW*(3,MGOQW54@#$0W,MGOQW54@#$0W', u'92(82#$40SO3%2,SFW($(#qFW,3WFT(#&amp;23t,3WFT(#&amp;23t'], u'page': [u'1', u'2', u'3', u'4', u'5'], u'device_id': [u'142821', u'142821', u'142821', u'F2LNTAWLG5R1', u'1ea6e8e0']}
+Traceback (most recent call last):
+  File "E:\ZygTest\V_gomeplus\Search\Search_ApiTest.py", line 94, in test_searchimage
+    self.assertEqual(self.dict_params.get('code_img')[j],eval(respeson.content).get('code'))
+AssertionError: u'200' != 200
 
 
         </pre>
@@ -315,10 +322,10 @@ AttributeError: 'unicode' object has no attribute 'get'
 
 <tr id='total_row'>
     <td>Total</td>
-    <td>2</td>
+    <td>3</td>
     <td>0</td>
+    <td>3</td>
     <td>0</td>
-    <td>2</td>
     <td>&nbsp;</td>
 </tr>
 </table>

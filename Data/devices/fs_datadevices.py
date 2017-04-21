@@ -15,7 +15,7 @@ import collections
 
 class fs_datadevice:
     def __init__(self,xls_name):
-        self.path = os.path.abspath('..') + '\\Data\\fs_XLS\\'
+        self.path = 'E:\\ZygTest\\Data\\fs_XLS\\'
         print self.path
         self.xls_name = xls_name
         if os.path.exists(self.path + self.xls_name):
@@ -42,7 +42,7 @@ class fs_datadevice:
             if not num:
                 self.num.remove(num)
 
-        print self.num
+        #print self.num
         return  dict(URL)
 
 

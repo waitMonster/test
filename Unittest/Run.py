@@ -9,6 +9,7 @@ import HTMLTestRunner
 from Unittest import appium_qunar,appium_m
 from case.Main import SendMile
 from fsTest import PC_Api_Project
+from V_gomeplus.Search import Search_ApiTest
 
 if __name__ == '__main__':
     suite = unittest.TestSuite()
@@ -24,8 +25,11 @@ if __name__ == '__main__':
     #suite.addTest(appium_qunar.qunarAndroidTests("test_search"))
     #suite.addTest(appium_xiaomi.xiaomiAndroidTests("test_order"))
     #suite.addTest(appium_m.appium_m("test_mjd"))';
-    suite.addTest(PC_Api_Project.Project("test_postcreatepro"))
-    suite.addTest(PC_Api_Project.Project("test_postprojectlist"))
+    #suite.addTest(PC_Api_Project.Project("test_postcreatepro"))
+    #suite.addTest(PC_Api_Project.Project("test_postprojectlist"))
+    suite.addTest(Search_ApiTest.Search_ApiTest("test_search"))
+    suite.addTest(Search_ApiTest.Search_ApiTest("test_searchpublisher"))
+    suite.addTest(Search_ApiTest.Search_ApiTest("test_searchimage"))
     if not os.path.exists(reportname):
                 f = open(reportname,'wb')
     runner=HTMLTestRunner.HTMLTestRunner(stream=f,title='test report',description=u'report:')

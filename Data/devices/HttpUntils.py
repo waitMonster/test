@@ -31,9 +31,15 @@ class HttpUntils:
         #################################################################################################
 
     def Get(self):
-        get_data = urllib.urlencode(self.data)
+        if 'auth' in self.data.keys():
+            Auth = self.data.get('auth')
+            data_p = urllib.urlencode(self.data)
+            oldAuth = data_p.split('&')[3].split('=')[1]
+            get_data = str(data_p).replace(oldAuth,Auth)
+        else:
+            get_data = urllib.urlencode(self.data)
         try:
-           r = requests.get(self.url+get_data,verify=False)
+           r = requests.get(self.url,params=get_data,verify=False)
            if r.status_code == 200:
                return r
            elif r.status_code in [502,504]:
