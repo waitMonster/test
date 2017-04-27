@@ -16,7 +16,7 @@ import collections
 class fs_datadevice:
     def __init__(self,xls_name):
         self.path = os.path.abspath('..') + '\\Data\\fs_XLS\\'
-        print self.path
+        #print self.path
         self.xls_name = xls_name
         if os.path.exists(self.path + self.xls_name):
             self.xls_data = xlrd.open_workbook(self.path + self.xls_name)
@@ -43,7 +43,7 @@ class fs_datadevice:
             if not num:
                 self.num.remove(num)
 
-        print self.num
+        #print self.num
         return  dict(URL)
 
 
@@ -84,7 +84,7 @@ class fs_datadevice:
             #STR = [params[s],params[s+1]]
             #Data_params.append(STR)
 
-        print dict_params
+        #print dict_params
         return dict_params
 
 
