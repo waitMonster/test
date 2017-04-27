@@ -46,7 +46,7 @@ class AppElements:
         try:
             list_Elements = self.driver.find_elements_by_id(selector)
             if list_Elements:
-                Elements = list_Elements
+                self.Elements = list_Elements
             else:
                 self.Elements = u'元素'+selector+u'不存在'
                 print self.Elements
