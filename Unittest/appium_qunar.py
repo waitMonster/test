@@ -31,17 +31,17 @@ class qunarAndroidTests(unittest.TestCase):
         self.driver.quit() #case执行完退出
 
     def test_search(self): #需要执行的case
-        time.sleep(5)
+        time.sleep(10)
         self.driver.find_element_by_id('com.mqunar.atom.alexhome:id/atom_alexhome_search_edittext').click()
         time.sleep(2)
         accpet = self.driver.find_element_by_id('com.mqunar.atom.voice:id/atom_voice_title_search_edittext').send_keys(u'三亚')
         time.sleep(2)
         arrows = self.driver.find_elements_by_name(u'更多')
+        print type(arrows[0])
         arrows[3].click()
         time.sleep(3)
-        titles = self.driver.find_elements_by_class_name('android.widget.Image')
-        for i in range(4):
-            print titles[i].text+'\n'
+
+
 
 
 

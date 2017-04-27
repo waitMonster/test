@@ -68,6 +68,7 @@ class Project(unittest.TestCase):
         list_params['orderType'] = str(self.dict_params.get('orderType')[0])
         http = HttpUntils.HttpUntils(self.list_url,list_params,list_headers,self.Cookies[0])
         result = http.Post_cookies()
+        print type(result)
         ProjectList = result.json().get('Value').get('myProjectList')
         for i in range(len(ProjectList)):
             self.projectID.append(ProjectList[i].get('projectId'))
