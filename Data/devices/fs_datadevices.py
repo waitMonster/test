@@ -15,13 +15,17 @@ import collections
 
 class fs_datadevice:
     def __init__(self,xls_name):
+<<<<<<< HEAD
         self.path = os.path.abspath('..') + '\\Data\\fs_XLS\\'
         #print self.path
+=======
+        self.path = 'E:\\ZygTest\\Data\\fs_XLS\\'
+        print self.path
+>>>>>>> 2ca9af83c0621a6e0f25bcf89b379fce580937de
         self.xls_name = xls_name
         if os.path.exists(self.path + self.xls_name):
             self.xls_data = xlrd.open_workbook(self.path + self.xls_name)
         self.table = self.xls_data.sheets()
-
 
     #读取url
     def Rxls_URL(self):

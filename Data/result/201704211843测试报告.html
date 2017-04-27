@@ -189,9 +189,9 @@ function showOutput(id, name) {
 
 <div class='heading'>
 <h1>test report</h1>
-<p class='attribute'><strong>Start Time:</strong> 2017-04-05 19:30:02</p>
-<p class='attribute'><strong>Duration:</strong> 0:00:00.239000</p>
-<p class='attribute'><strong>Status:</strong> Failure 1</p>
+<p class='attribute'><strong>Start Time:</strong> 2017-04-21 18:43:57</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:01.903000</p>
+<p class='attribute'><strong>Status:</strong> Pass 1</p>
 
 <p class='description'>report:</p>
 </div>
@@ -221,44 +221,63 @@ function showOutput(id, name) {
     <td>View</td>
 </tr>
 
-<tr class='failClass'>
-    <td>fsTest.PC_Api_Project.Project</td>
+<tr class='passClass'>
+    <td>V_gomeplus.Search.Search_ApiTest.Search_ApiTest</td>
+    <td>1</td>
     <td>1</td>
     <td>0</td>
-    <td>1</td>
     <td>0</td>
     <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
 </tr>
 
-<tr id='ft1.1' class='none'>
-    <td class='failCase'><div class='testcase'>test_postcreatepro</div></td>
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_search</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1')" >
-        fail</a>
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        pass</a>
 
-    <div id='div_ft1.1' class="popup_window">
+    <div id='div_pt1.1' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.1').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-ft1.1: D:\ZygTest\Data\fs_XLS\
-[u'0', u'3']
-[u'0', u'3']
-[u'0', u'3']
-[u'0', u'3']
-{u'star': [u'false', u'true', u'false', u'true', u'false'], u'PersistenceHint': [u'true', u'true'], u'backgroundID': [u'G_201605_15_4c9263bd425a47d3a73210bb5860bfc4.png', u'G_201605_15_4c9263bd425a47d3a73210bb5860bfc4.png', u'G_201605_15_4c9263bd425a47d3a73210bb5860bfc4.png', u'G_201605_15_4c9263bd425a47d3a73210bb5860bfc4.png', u'G_201605_15_4c9263bd425a47d3a73210bb5860bfc4.png'], u'creatorId': [u'183', u'183', u'183', u'183', u'183'], u'description': [u'aaaaaaaaaaaaaaaa', u'bbbbbbbbbbbbbbbb', u'cccccccccccccccc', u'dddddddddddddddd', u'eeeeeeeeeeeeeeee'], u'ImgCode': [u' ', u' '], u'name': [u'pro111aaa', u'pro222bbb', u'pro333ccc', u'pro444ddd', u'pro555eee'], u'StatusCode_createpro': [u'0', u'0', u'0', u'0', u'0'], u'admins': [u'[183]', u'[183]', u'[183]', u'[183]', u'[183]'], u'ClientId_old': [u'1490261809077', u'1490261809077'], u'members': [u'[183,1759,1864]', u'[183,1759,1864]', u'[183,1759,1864]', u'[183,1759,1864]', u'[183,1759,1864]'], u'EnterpriseAccount': [u'fktest', u'158833'], u'UserAccount': [u'linxl', u'13511035140'], u'ClientId_cro': [u'1490261809077', u'1490261809077', u'1490261809077', u'1490261809077', u'1490261809077'], u'Password': [u'123qwe', u'a123456'], u'categoryType': [u'1', u'1', u'1', u'1', u'1'], u'id': [u'5833b8a0c35c1841c64d0331', u'5833b8a0c35c1841c64d0331', u'5833b8a0c35c1841c64d0331', u'5833b8a0c35c1841c64d0331', u'5833b8a0c35c1841c64d0331'], u'StatusCode_oldlogin': [u'0', u'0']}
-D:\python2.7\lib\site-packages\requests\packages\urllib3\connectionpool.py:843: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+pt1.1: E:\ZygTest\Data\fs_XLS\
+[u'http://api.be.v.dev.gomeplus.com/v1/search/default', u'http://api.be.v.pre.gomeplus.com/v1/search/default', u'http://api.be.v.pro.gomeplus.com/v1/search/default', u'https://api-be-v.gomeplus.com/v1/search/default']
+{u'size': [u'2', u'3', u'4', u'5', u'6'], u'loginName': [u'13511035140', u'13511035140', u' ', u'13511035140', u' '], u'name': [u'wang', u'zhang', u'li', u'zhao', u'yang'], u'platform': [u'pc', u'h5', u'm', u'ios', u'android'], u'captchaType': [u'login', u'login', u'login', u'login', u'login'], u'loginType': [u'1', u'1', u'1', u'1', u'1'], u'captcha': [u' ', u' ', u' ', u' ', u' '], u'code': [u'3001', u'3001', u'3001', u'3001', u'3001'], u'chkRememberUsername': [u'1', u'1', u'1', u'1', u'1'], u'gomeOrCoo8': [u'gome', u'gome', u'gome', u'gome', u'gome'], u'agreeFlag': [u'radiobutton', u'radiobutton', u'radiobutton', u'radiobutton', u'radiobutton'], u'password': [u'89692938', u'123456789', u'89692938', u' ', u' '], u'auth': [u'95PCQUKMWLR,95PCQUKMWLR,95PCQUKMWLR,95PCQUKMWLR', u'LJFO9#82@1R,853&amp;($jerolJR,LWO(#)34F,LWO(#)34F', u'o3(32%#&amp;HLE,(204JLR$#^FK,QERJ&amp;#9TO394,QERJ&amp;#9TO394', u'5)&amp;7932kr&amp;24,($492RW*(3,MGOQW54@#$0W,MGOQW54@#$0W', u'92(82#$40SO3%2,SFW($(#qFW,3WFT(#&amp;23t,3WFT(#&amp;23t'], u'device_id': [u'142821', u'142821', u'142821', u'F2LNTAWLG5R1', u'1ea6e8e0']}
+{"code":200,"message":"success","data":{"publisher":{"name":"wang","total":0,"publisher":[],"has_more":0},"image_text":{"total":0,"name":"wang","imageText":[]}}}
+{"code":100001,"message":"\u53c2\u6570\u4e3a\u7a7a\u6216\u53c2\u6570\u9519\u8bef","data":{}}
+{"code":100001,"message":"\u53c2\u6570\u4e3a\u7a7a\u6216\u53c2\u6570\u9519\u8bef","data":{}}
+{"code":100003,"message":"Auth\u4e0d\u5408\u6cd5","data":{}}
+{"code":100001,"message":"\u53c2\u6570\u4e3a\u7a7a\u6216\u53c2\u6570\u9519\u8bef","data":{}}
+{"code":200,"message":"success","data":{"publisher":{"name":"wang","total":0,"publisher":[],"has_more":0},"image_text":{"total":0,"name":"wang","imageText":[]}}}
+{"code":100003,"message":"Auth\u4e0d\u5408\u6cd5","data":{}}
+{"code":100001,"message":"\u53c2\u6570\u4e3a\u7a7a\u6216\u53c2\u6570\u9519\u8bef","data":{}}
+{"code":100003,"message":"Auth\u4e0d\u5408\u6cd5","data":{}}
+{"code":100001,"message":"\u53c2\u6570\u4e3a\u7a7a\u6216\u53c2\u6570\u9519\u8bef","data":{}}
+{"code":200,"message":"success","data":{"publisher":{"name":"wang","total":0,"publisher":[],"more":false},"image_text":{"total":0,"name":"wang","imageText":[]}}}
+{"code":100001,"message":"\u53c2\u6570\u4e3a\u7a7a\u6216\u53c2\u6570\u9519\u8bef","data":{}}
+{"code":100001,"message":"\u53c2\u6570\u4e3a\u7a7a\u6216\u53c2\u6570\u9519\u8bef","data":{}}
+{"code":100001,"message":"\u53c2\u6570\u4e3a\u7a7a\u6216\u53c2\u6570\u9519\u8bef","data":{}}
+{"code":100001,"message":"\u53c2\u6570\u4e3a\u7a7a\u6216\u53c2\u6570\u9519\u8bef","data":{}}
+D:\python\lib\site-packages\requests\packages\urllib3\connectionpool.py:852: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
   InsecureRequestWarning)
-D:\python2.7\lib\site-packages\requests\packages\urllib3\connectionpool.py:843: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+{"code":200,"message":"success","data":{"publisher":{"name":"wang","total":0,"publisher":[],"more":false},"image_text":{"total":0,"name":"wang","imageText":[]}}}
+D:\python\lib\site-packages\requests\packages\urllib3\connectionpool.py:852: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
   InsecureRequestWarning)
-Traceback (most recent call last):
-  File "D:\ZygTest\fsTest\PC_Api_Project.py", line 61, in test_postcreatepro
-    self.assertEquals(str(self.dict_params.get('name')[i]),str(result.json().get('Result').get('StatusCode')))
-AssertionError: 'pro111aaa' != '0'
+{"code":100001,"message":"\u53c2\u6570\u4e3a\u7a7a\u6216\u53c2\u6570\u9519\u8bef","data":{}}
+D:\python\lib\site-packages\requests\packages\urllib3\connectionpool.py:852: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)
+{"code":100001,"message":"\u53c2\u6570\u4e3a\u7a7a\u6216\u53c2\u6570\u9519\u8bef","data":{}}
+D:\python\lib\site-packages\requests\packages\urllib3\connectionpool.py:852: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)
+{"code":100001,"message":"\u53c2\u6570\u4e3a\u7a7a\u6216\u53c2\u6570\u9519\u8bef","data":{}}
+D:\python\lib\site-packages\requests\packages\urllib3\connectionpool.py:852: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)
+{"code":100001,"message":"\u53c2\u6570\u4e3a\u7a7a\u6216\u53c2\u6570\u9519\u8bef","data":{}}
 
 
         </pre>
@@ -271,8 +290,8 @@ AssertionError: 'pro111aaa' != '0'
 <tr id='total_row'>
     <td>Total</td>
     <td>1</td>
-    <td>0</td>
     <td>1</td>
+    <td>0</td>
     <td>0</td>
     <td>&nbsp;</td>
 </tr>
