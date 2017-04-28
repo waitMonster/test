@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 import selenium
 from appium import webdriver
+from selenium.common.exceptions import WebDriverException
+
 from Data.devices.AppElements import AppElements
 import os
 import time
@@ -42,11 +44,12 @@ class app_vgomeplus(unittest.TestCase):
                print self.app.id('cn.com.gomeplus.video:id/tv_subscribe_summary').text
            else:
                print u'进入的视频详情页标题为：'+detail_title_text+u'，与视频列表不一致，请联系相关人员查看'
-
         except AttributeError,a:
             print u'异常原因：'+str(a)
             self.assertEqual('',str(a))
-
+        except WebDriverException ,w:
+            print u'异常原因：'+str(w)
+            self.assertEqual('',str(w))
 
 
 

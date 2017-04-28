@@ -39,6 +39,7 @@ class AppElements:
             self.Element = self.driver.find_element_by_id(selector)
         except NoSuchElementException:
             self.Element = u'元素'+selector+u'不存在'
+            print self.Element
 
         return self.Element
 
