@@ -26,6 +26,6 @@ class Delproject:
                 result = http.Post_cookies()
                 #self.assertEquals(str(self.dict_params.get('StatusCode_createpro')[i]),str(result.json().get('Result').get('StatusCode')))
                 #self.assertEquals(1,result.json().get('Value').get('status'))
-                print str(result.json())+'\n'
+                #print str(result.json())+'\n'
         except Exception,e:
             print e

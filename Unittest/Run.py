@@ -25,12 +25,12 @@ if __name__ == '__main__':
     #suite.addTest(appium_qunar.qunarAndroidTests("test_search"))
     #suite.addTest(appium_xiaomi.xiaomiAndroidTests("test_order"))
     #suite.addTest(appium_m.appium_m("test_mjd"))';
-    #suite.addTest(PC_Api_Project.Project("test_postcreatepro"))
+    suite.addTest(PC_Api_Project.Project("test_postcreatepro"))
     #suite.addTest(PC_Api_Project.Project("test_postprojectlist"))
     #suite.addTest(Search_ApiTest.Search_ApiTest("test_search"))
     #suite.addTest(Search_ApiTest.Search_ApiTest("test_searchpublisher"))
     #suite.addTest(Search_ApiTest.Search_ApiTest("test_searchimage"))
-    suite.addTest(appium_app_vgomeplus.app_vgomeplus("test_video_detail"))
+    #suite.addTest(appium_app_vgomeplus.app_vgomeplus("test_video_detail"))
     #if not os.path.exists(reportname):
                 #f = open(reportname,'wb')
     #runner=HTMLTestRunner.HTMLTestRunner(stream=f,title='test report',description=u'report:')
