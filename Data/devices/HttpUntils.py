@@ -1,15 +1,8 @@
 # -*- coding: utf-8 -*-
-import codecs
-import time
-import urllib2,urllib
-import requests
+import codecs,time,urllib2,urllib,requests,os,datetime,json,logging
 from selenium import webdriver
-import os
-import datetime
 from Data.devices import fs_datadevices
-import json
-import httplib
-import logging
+
 class HttpUntils:
     def __init__(self,url,data,headers,cookies):
         self.url = url
@@ -30,7 +23,7 @@ class HttpUntils:
         logging.getLogger('').addHandler(console)
         #################################################################################################
 
-    def Get(self):
+    def Get(self):#get请求实现方法
         if 'auth' in self.data.keys():
             Auth = self.data.get('auth')
             data_p = urllib.urlencode(self.data)
@@ -41,16 +34,24 @@ class HttpUntils:
         try:
            r = requests.get(self.url,params=get_data,verify=False)
            if r.status_code == 200:
-               return r
+               self.repeson = r
            elif r.status_code in [502,504]:
-               logging.warning('Gateway Time-out')
+               self.repeson = 'Gateway error'
+               logging.warning(self.repeson)
            else:
-               logging.warning('sever is error')
-
-        except requests.ConnectionError,e:
+               self.repeson = 'sever is error'
+               logging.warning(self.repeson)
+        except requests.ConnectionError, e:  # 处理DNS网络问题异常
             print e
+        except requests.HTTPError, h:  # 处理无效http响应异常
+            print h
+        except requests.Timeout, t:  # 处理请求超时异常
+            print t
 
-    def Post(self):
+        return self.repeson
+
+
+    def Post(self):#不需要cookies的post请求方法
         if 'x-www-form-urlencoded' in self.herders.get('Content-Type'):
             Post_data = urllib.urlencode(self.data)
         elif 'json' in self.herders.get('Content-Type'):
@@ -60,17 +61,25 @@ class HttpUntils:
         try:
            r = requests.post(self.url,data=Post_data,headers=self.herders,verify=False)
            if r.status_code == 200:
-               return r
-           elif r.status_code in [502,504]:
-               logging.warning('Gateway Time-out')
+               self.repeson = r
+           elif r.status_code in [502, 504]:
+               self.repeson = 'Gateway error'
+               logging.warning(self.repeson)
            else:
-               logging.warning('sever is error')
-
-        except requests.ConnectionError,e:
+               self.repeson = 'sever is error'
+               logging.warning(self.repeson)
+        except requests.ConnectionError, e:  # 处理DNS网络问题异常
             print e
+        except requests.HTTPError, h:  # 处理无效http响应异常
+            print h
+        except requests.Timeout, t:  # 处理请求超时异常
+            print t
+
+        return self.repeson
 
 
-    def Post_cookies(self):
+
+    def Post_cookies(self):#需要cookies的post请求方法
         if 'x-www-form-urlencoded' in self.herders.get('Content-Type'):
             Post_data = urllib.urlencode(self.data)
         elif 'json' in self.herders.get('Content-Type'):
@@ -80,14 +89,21 @@ class HttpUntils:
         try:
            r = requests.post(self.url,data=Post_data,headers=self.herders,cookies=self.cookies,verify=False)
            if r.status_code == 200:
-               return r
-           elif r.status_code in [502,504]:
-               logging.warning('Gateway Time-out')
+               self.repeson = r
+           elif r.status_code in [502, 504]:
+               self.repeson = 'Gateway error'
+               logging.warning(self.repeson)
            else:
-               logging.warning('sever is error')
-
-        except requests.ConnectionError,e:
+               self.repeson = 'sever is error'
+               logging.warning(self.repeson)
+        except requests.ConnectionError, e:  # 处理DNS网络问题异常
             print e
+        except requests.HTTPError, h:  # 处理无效http响应异常
+            print h
+        except requests.Timeout, t:  # 处理请求超时异常
+            print t
+
+        return self.repeson
 
 
 
