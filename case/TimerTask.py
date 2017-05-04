@@ -5,15 +5,11 @@ from lib2to3.pgen2 import driver
 import time
 import fractions
 import sysconfig
-
-
 import select
 import os,sys
-
 from selenium import webdriver
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common import keys
-
 class timerTask:
     def __init__(self,drive,task_name):
         self.lasttime = ''
