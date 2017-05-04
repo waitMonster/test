@@ -15,9 +15,10 @@ from Data.devices import WebElements
 
 class Recommend(unittest.TestCase):
     def setUp(self):
-        self.driver = webdriver.Chrome()
+        self.driver = webdriver.PhantomJS()
         self.web = WebElements.WebElements(self.driver)
         self.driver.get('http://v.gomeplus.com/')
+        self.driver.maximize_window()
         self.i = 1
 
     def tearDown(self):
@@ -26,16 +27,21 @@ class Recommend(unittest.TestCase):
     def test_recommend_num(self):
         try:
             while True:
-                xpath = './/*[@id="videoList"]/ul/li['+str(self.i)+']/a/div'
+                xpath = './/*[@id="videoList"]/ul/li['+str(self.i)+']/a'
                 video_player = self.web.xpath(xpath)
                 video_player.click()
-                time.sleep(3)
+                time.sleep(1)
                 handles = self.driver.window_handles
+                #print handles
                 if len(handles)>1:
-                    self.driver.close()
+                    #self.driver.switch_to.window(handles[1])
+                    #print self.driver.current_window_handle
+                    #self.driver.close()
+                    #self.driver.switch_to.window(handles[0])
+                    pass
                 else:
                     print u'第'+str(self.i)+u'个视频无效'
-                self.drive.execute_script("var q=document.body.scrollTop=100")
+                self.driver.execute_script("var q=document.body.scrollTop=100")
                 self.i = self.i+1
                 if self.web.xpath('.//*[@id="videoList"]/div[2]/div/a').text == u'没有更多了':
                     break
