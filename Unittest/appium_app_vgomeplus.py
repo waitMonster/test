@@ -2,7 +2,6 @@
 import selenium
 from appium import webdriver
 from selenium.common.exceptions import WebDriverException
-
 from Data.devices.AppElements import AppElements
 import os
 import time

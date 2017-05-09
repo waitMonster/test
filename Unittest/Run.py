@@ -11,6 +11,7 @@ from case.Main import SendMile
 from fsTest import PC_Api_Project
 from V_gomeplus.Search import Search_ApiTest
 from V_gomeplus.PC import Recommend
+from V_gomeplus.Android import Login
 
 if __name__ == '__main__':
     suite = unittest.TestSuite()
@@ -32,7 +33,8 @@ if __name__ == '__main__':
     #suite.addTest(Search_ApiTest.Search_ApiTest("test_searchpublisher"))
     #suite.addTest(Search_ApiTest.Search_ApiTest("test_searchimage"))
     #suite.addTest(appium_app_vgomeplus.app_vgomeplus("test_video_detail"))
-    suite.addTest(Recommend.Recommend("test_recommend_num"))
+    #suite.addTest(Recommend.Recommend("test_recommend_num"))
+    suite.addTest(Login.Login("test_login"))
     #if not os.path.exists(reportname):
                 #f = open(reportname,'wb')
     #runner=HTMLTestRunner.HTMLTestRunner(stream=f,title='test report',description=u'report:')

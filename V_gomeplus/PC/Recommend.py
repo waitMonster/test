@@ -30,7 +30,7 @@ class Recommend(unittest.TestCase):
                 xpath = './/*[@id="videoList"]/ul/li['+str(self.i)+']/a'
                 video_player = self.web.xpath(xpath)
                 video_player.click()
-                time.sleep(1)
+                #time.sleep(1)
                 handles = self.driver.window_handles
                 #print handles
                 if len(handles)>1:
@@ -42,7 +42,7 @@ class Recommend(unittest.TestCase):
                 else:
                     print u'第'+str(self.i)+u'个视频无效'
                 self.driver.execute_script("var q=document.body.scrollTop=100")
-                self.i = self.i+1
+                self.i = self.i + 1
                 if self.web.xpath('.//*[@id="videoList"]/div[2]/div/a').text == u'没有更多了':
                     break
             print u'PC首页共有推荐视频'+str(self.i)+u'个'
@@ -53,7 +53,6 @@ class Recommend(unittest.TestCase):
         except ElementNotVisibleException,e:
             print u'异常原因：'+str(e)
             self.assertEqual('',str(e))
-
 
 
 
